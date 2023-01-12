@@ -1,10 +1,10 @@
 <?php
 
-namespace GuzzleHttp\Tests\Psr7;
+namespace ImpreseeGuzzleHttp\Tests\Psr7;
 
-use GuzzleHttp\Psr7;
-use GuzzleHttp\Psr7\InflateStream;
-use GuzzleHttp\Psr7\NoSeekStream;
+use ImpreseeGuzzleHttp\Psr7;
+use ImpreseeGuzzleHttp\Psr7\InflateStream;
+use ImpreseeGuzzleHttp\Psr7\NoSeekStream;
 
 class InflateStreamTest extends BaseTest
 {

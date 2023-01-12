@@ -1,11 +1,11 @@
 <?php
 
-namespace GuzzleHttp\Tests\Psr7;
+namespace ImpreseeGuzzleHttp\Tests\Psr7;
 
-use GuzzleHttp\Psr7\Stream;
+use ImpreseeGuzzleHttp\Psr7\Stream;
 
 /**
- * @covers GuzzleHttp\Psr7\Stream
+ * @covers ImpreseeGuzzleHttp\Psr7\Stream
  */
 class StreamTest extends BaseTest
 {
@@ -393,9 +393,9 @@ class StreamTest extends BaseTest
     }
 }
 
-namespace GuzzleHttp\Psr7;
+namespace ImpreseeGuzzleHttp\Psr7;
 
-use GuzzleHttp\Tests\Psr7\StreamTest;
+use ImpreseeGuzzleHttp\Tests\Psr7\StreamTest;
 
 function fread($handle, $length)
 {

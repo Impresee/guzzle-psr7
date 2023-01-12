@@ -1,6 +1,6 @@
 <?php
 
-namespace GuzzleHttp\Psr7;
+namespace ImpreseeGuzzleHttp\Psr7;
 
 use InvalidArgumentException;
 use Psr\Http\Message\ServerRequestInterface;

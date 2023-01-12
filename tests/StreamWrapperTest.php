@@ -1,12 +1,12 @@
 <?php
 
-namespace GuzzleHttp\Tests\Psr7;
+namespace ImpreseeGuzzleHttp\Tests\Psr7;
 
-use GuzzleHttp\Psr7;
-use GuzzleHttp\Psr7\StreamWrapper;
+use ImpreseeGuzzleHttp\Psr7;
+use ImpreseeGuzzleHttp\Psr7\StreamWrapper;
 
 /**
- * @covers GuzzleHttp\Psr7\StreamWrapper
+ * @covers ImpreseeGuzzleHttp\Psr7\StreamWrapper
  */
 class StreamWrapperTest extends BaseTest
 {

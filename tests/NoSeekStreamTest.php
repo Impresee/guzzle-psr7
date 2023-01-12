@@ -1,12 +1,12 @@
 <?php
 
-namespace GuzzleHttp\Tests\Psr7;
+namespace ImpreseeGuzzleHttp\Tests\Psr7;
 
-use GuzzleHttp\Psr7\NoSeekStream;
+use ImpreseeGuzzleHttp\Psr7\NoSeekStream;
 
 /**
- * @covers GuzzleHttp\Psr7\NoSeekStream
- * @covers GuzzleHttp\Psr7\StreamDecoratorTrait
+ * @covers ImpreseeGuzzleHttp\Psr7\NoSeekStream
+ * @covers ImpreseeGuzzleHttp\Psr7\StreamDecoratorTrait
  */
 class NoSeekStreamTest extends BaseTest
 {
@@ -27,7 +27,7 @@ class NoSeekStreamTest extends BaseTest
 
     public function testToStringDoesNotSeek()
     {
-        $s = \GuzzleHttp\Psr7\Utils::streamFor('foo');
+        $s = \ImpreseeGuzzleHttp\Psr7\Utils::streamFor('foo');
         $s->seek(1);
         $wrapped = new NoSeekStream($s);
         self::assertSame('oo', (string) $wrapped);

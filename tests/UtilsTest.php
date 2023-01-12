@@ -1,10 +1,10 @@
 <?php
 
-namespace GuzzleHttp\Tests\Psr7;
+namespace ImpreseeGuzzleHttp\Tests\Psr7;
 
-use GuzzleHttp\Psr7;
-use GuzzleHttp\Psr7\FnStream;
-use GuzzleHttp\Psr7\NoSeekStream;
+use ImpreseeGuzzleHttp\Psr7;
+use ImpreseeGuzzleHttp\Psr7\FnStream;
+use ImpreseeGuzzleHttp\Psr7\NoSeekStream;
 
 class UtilsTest extends BaseTest
 {
@@ -131,7 +131,7 @@ class UtilsTest extends BaseTest
 
     public function testReadsLineUntilFalseReturnedFromRead()
     {
-        $s = $this->getMockBuilder('GuzzleHttp\Psr7\Stream')
+        $s = $this->getMockBuilder('ImpreseeGuzzleHttp\Psr7\Stream')
             ->setMethods(['read', 'eof'])
             ->disableOriginalConstructor()
             ->getMock();
@@ -198,9 +198,9 @@ class UtilsTest extends BaseTest
 
     public function testCreatesUriForValue()
     {
-        self::assertInstanceOf('GuzzleHttp\Psr7\Uri', Psr7\Utils::uriFor('/foo'));
+        self::assertInstanceOf('ImpreseeGuzzleHttp\Psr7\Uri', Psr7\Utils::uriFor('/foo'));
         self::assertInstanceOf(
-            'GuzzleHttp\Psr7\Uri',
+            'ImpreseeGuzzleHttp\Psr7\Uri',
             Psr7\Utils::uriFor(new Psr7\Uri('/foo'))
         );
     }
@@ -224,7 +224,7 @@ class UtilsTest extends BaseTest
     public function testCreatesWithFactory()
     {
         $stream = Psr7\Utils::streamFor('foo');
-        self::assertInstanceOf('GuzzleHttp\Psr7\Stream', $stream);
+        self::assertInstanceOf('ImpreseeGuzzleHttp\Psr7\Stream', $stream);
         self::assertSame('foo', $stream->getContents());
         $stream->close();
     }
@@ -232,20 +232,20 @@ class UtilsTest extends BaseTest
     public function testFactoryCreatesFromEmptyString()
     {
         $s = Psr7\Utils::streamFor();
-        self::assertInstanceOf('GuzzleHttp\Psr7\Stream', $s);
+        self::assertInstanceOf('ImpreseeGuzzleHttp\Psr7\Stream', $s);
     }
 
     public function testFactoryCreatesFromNull()
     {
         $s = Psr7\Utils::streamFor(null);
-        self::assertInstanceOf('GuzzleHttp\Psr7\Stream', $s);
+        self::assertInstanceOf('ImpreseeGuzzleHttp\Psr7\Stream', $s);
     }
 
     public function testFactoryCreatesFromResource()
     {
         $r = fopen(__FILE__, 'r');
         $s = Psr7\Utils::streamFor($r);
-        self::assertInstanceOf('GuzzleHttp\Psr7\Stream', $s);
+        self::assertInstanceOf('ImpreseeGuzzleHttp\Psr7\Stream', $s);
         self::assertSame(file_get_contents(__FILE__), (string)$s);
     }
 
@@ -253,7 +253,7 @@ class UtilsTest extends BaseTest
     {
         $r = new HasToString();
         $s = Psr7\Utils::streamFor($r);
-        self::assertInstanceOf('GuzzleHttp\Psr7\Stream', $s);
+        self::assertInstanceOf('ImpreseeGuzzleHttp\Psr7\Stream', $s);
         self::assertSame('foo', (string)$s);
     }
 
@@ -287,7 +287,7 @@ class UtilsTest extends BaseTest
     {
         $a = new \ArrayIterator(['foo', 'bar', '123']);
         $p = Psr7\Utils::streamFor($a);
-        self::assertInstanceOf('GuzzleHttp\Psr7\PumpStream', $p);
+        self::assertInstanceOf('ImpreseeGuzzleHttp\Psr7\PumpStream', $p);
         self::assertSame('foo', $p->read(3));
         self::assertFalse($p->eof());
         self::assertSame('b', $p->read(1));
@@ -366,7 +366,7 @@ class UtilsTest extends BaseTest
     {
         $r1 = new Psr7\Request('GET', 'http://foo.com');
         $r2 = Psr7\Utils::modifyRequest($r1, []);
-        self::assertInstanceOf('GuzzleHttp\Psr7\Request', $r2);
+        self::assertInstanceOf('ImpreseeGuzzleHttp\Psr7\Request', $r2);
 
         $r1 = new Psr7\ServerRequest('GET', 'http://foo.com');
         $r2 = Psr7\Utils::modifyRequest($r1, []);
@@ -401,7 +401,7 @@ class UtilsTest extends BaseTest
     {
         $r1 = new Psr7\Request('GET', 'http://foo.com');
         $r2 = Psr7\Utils::modifyRequest($r1, ['remove_headers' => ['non-existent']]);
-        self::assertInstanceOf('GuzzleHttp\Psr7\Request', $r2);
+        self::assertInstanceOf('ImpreseeGuzzleHttp\Psr7\Request', $r2);
 
         $r1 = new Psr7\ServerRequest('GET', 'http://foo.com');
         $r2 = Psr7\Utils::modifyRequest($r1, ['remove_headers' => ['non-existent']]);
@@ -420,7 +420,7 @@ class UtilsTest extends BaseTest
         self::assertCount(1, $modifiedRequest->getUploadedFiles());
 
         $files = $modifiedRequest->getUploadedFiles();
-        self::assertInstanceOf('GuzzleHttp\Psr7\UploadedFile', $files[0]);
+        self::assertInstanceOf('ImpreseeGuzzleHttp\Psr7\UploadedFile', $files[0]);
     }
 
     public function testModifyServerRequestWithCookies()

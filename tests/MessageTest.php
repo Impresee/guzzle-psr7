@@ -1,9 +1,9 @@
 <?php
 
-namespace GuzzleHttp\Tests\Psr7;
+namespace ImpreseeGuzzleHttp\Tests\Psr7;
 
-use GuzzleHttp\Psr7;
-use GuzzleHttp\Psr7\FnStream;
+use ImpreseeGuzzleHttp\Psr7;
+use ImpreseeGuzzleHttp\Psr7\FnStream;
 
 class MessageTest extends BaseTest
 {

@@ -1,13 +1,13 @@
 <?php
 
-namespace GuzzleHttp\Tests\Psr7;
+namespace ImpreseeGuzzleHttp\Tests\Psr7;
 
-use GuzzleHttp\Psr7\ServerRequest;
-use GuzzleHttp\Psr7\UploadedFile;
-use GuzzleHttp\Psr7\Uri;
+use ImpreseeGuzzleHttp\Psr7\ServerRequest;
+use ImpreseeGuzzleHttp\Psr7\UploadedFile;
+use ImpreseeGuzzleHttp\Psr7\Uri;
 
 /**
- * @covers GuzzleHttp\Psr7\ServerRequest
+ * @covers ImpreseeGuzzleHttp\Psr7\ServerRequest
  */
 class ServerRequestTest extends BaseTest
 {

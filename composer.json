@@ -52,18 +52,18 @@
     },
     "autoload": {
         "psr-4": {
-            "GuzzleHttp\\Psr7\\": "src/"
+            "ImpreseeGuzzleHttp\\Psr7\\": "src/"
         },
         "files": ["src/functions_include.php"]
     },
     "autoload-dev": {
         "psr-4": {
-            "GuzzleHttp\\Tests\\Psr7\\": "tests/"
+            "ImpreseeGuzzleHttp\\Tests\\Psr7\\": "tests/"
         }
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "1.9-dev"
+            "dev-master": "1.x-dev"
         }
     },
     "config": {

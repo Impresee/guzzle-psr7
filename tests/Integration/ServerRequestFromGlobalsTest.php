@@ -1,8 +1,8 @@
 <?php
 
-namespace GuzzleHttp\Tests\Psr7\Integration;
+namespace ImpreseeGuzzleHttp\Tests\Psr7\Integration;
 
-use GuzzleHttp\Tests\Psr7\BaseTest;
+use ImpreseeGuzzleHttp\Tests\Psr7\BaseTest;
 
 class ServerRequestFromGlobalsTest extends BaseTest
 {

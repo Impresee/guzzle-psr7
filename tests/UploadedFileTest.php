@@ -1,13 +1,13 @@
 <?php
 
-namespace GuzzleHttp\Tests\Psr7;
+namespace ImpreseeGuzzleHttp\Tests\Psr7;
 
-use GuzzleHttp\Psr7\Stream;
-use GuzzleHttp\Psr7\UploadedFile;
+use ImpreseeGuzzleHttp\Psr7\Stream;
+use ImpreseeGuzzleHttp\Psr7\UploadedFile;
 use ReflectionProperty;
 
 /**
- * @covers GuzzleHttp\Psr7\UploadedFile
+ * @covers ImpreseeGuzzleHttp\Psr7\UploadedFile
  */
 class UploadedFileTest extends BaseTest
 {
@@ -163,7 +163,7 @@ class UploadedFileTest extends BaseTest
 
     public function testSuccessful()
     {
-        $stream = \GuzzleHttp\Psr7\Utils::streamFor('Foo bar!');
+        $stream = \ImpreseeGuzzleHttp\Psr7\Utils::streamFor('Foo bar!');
         $upload = new UploadedFile($stream, $stream->getSize(), UPLOAD_ERR_OK, 'filename.txt', 'text/plain');
 
         self::assertSame($stream->getSize(), $upload->getSize());
@@ -195,7 +195,7 @@ class UploadedFileTest extends BaseTest
      */
     public function testMoveRaisesExceptionForInvalidPath($path)
     {
-        $stream = \GuzzleHttp\Psr7\Utils::streamFor('Foo bar!');
+        $stream = \ImpreseeGuzzleHttp\Psr7\Utils::streamFor('Foo bar!');
         $upload = new UploadedFile($stream, 0, UPLOAD_ERR_OK);
 
         $this->cleanup[] = $path;
@@ -206,7 +206,7 @@ class UploadedFileTest extends BaseTest
 
     public function testMoveCannotBeCalledMoreThanOnce()
     {
-        $stream = \GuzzleHttp\Psr7\Utils::streamFor('Foo bar!');
+        $stream = \ImpreseeGuzzleHttp\Psr7\Utils::streamFor('Foo bar!');
         $upload = new UploadedFile($stream, 0, UPLOAD_ERR_OK);
 
         $this->cleanup[] = $to = tempnam(sys_get_temp_dir(), 'diac');
@@ -219,7 +219,7 @@ class UploadedFileTest extends BaseTest
 
     public function testCannotRetrieveStreamAfterMove()
     {
-        $stream = \GuzzleHttp\Psr7\Utils::streamFor('Foo bar!');
+        $stream = \ImpreseeGuzzleHttp\Psr7\Utils::streamFor('Foo bar!');
         $upload = new UploadedFile($stream, 0, UPLOAD_ERR_OK);
 
         $this->cleanup[] = $to = tempnam(sys_get_temp_dir(), 'diac');

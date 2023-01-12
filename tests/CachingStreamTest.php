@@ -1,13 +1,13 @@
 <?php
 
-namespace GuzzleHttp\Tests\Psr7;
+namespace ImpreseeGuzzleHttp\Tests\Psr7;
 
-use GuzzleHttp\Psr7;
-use GuzzleHttp\Psr7\CachingStream;
-use GuzzleHttp\Psr7\Stream;
+use ImpreseeGuzzleHttp\Psr7;
+use ImpreseeGuzzleHttp\Psr7\CachingStream;
+use ImpreseeGuzzleHttp\Psr7\Stream;
 
 /**
- * @covers GuzzleHttp\Psr7\CachingStream
+ * @covers ImpreseeGuzzleHttp\Psr7\CachingStream
  */
 class CachingStreamTest extends BaseTest
 {
@@ -94,7 +94,7 @@ class CachingStreamTest extends BaseTest
     public function testRewindUsesSeek()
     {
         $a = Psr7\Utils::streamFor('foo');
-        $d = $this->getMockBuilder('GuzzleHttp\Psr7\CachingStream')
+        $d = $this->getMockBuilder('ImpreseeGuzzleHttp\Psr7\CachingStream')
             ->setMethods(['seek'])
             ->setConstructorArgs([$a])
             ->getMock();
@@ -124,7 +124,7 @@ class CachingStreamTest extends BaseTest
         fwrite($stream, 'testing');
         fseek($stream, 0);
 
-        $this->decorated = $this->getMockBuilder('\GuzzleHttp\Psr7\Stream')
+        $this->decorated = $this->getMockBuilder('\ImpreseeGuzzleHttp\Psr7\Stream')
             ->setConstructorArgs([$stream])
             ->setMethods(['read'])
             ->getMock();

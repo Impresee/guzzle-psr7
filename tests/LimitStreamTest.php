@@ -1,15 +1,15 @@
 <?php
 
-namespace GuzzleHttp\Tests\Psr7;
+namespace ImpreseeGuzzleHttp\Tests\Psr7;
 
-use GuzzleHttp\Psr7;
-use GuzzleHttp\Psr7\FnStream;
-use GuzzleHttp\Psr7\LimitStream;
-use GuzzleHttp\Psr7\NoSeekStream;
-use GuzzleHttp\Psr7\Stream;
+use ImpreseeGuzzleHttp\Psr7;
+use ImpreseeGuzzleHttp\Psr7\FnStream;
+use ImpreseeGuzzleHttp\Psr7\LimitStream;
+use ImpreseeGuzzleHttp\Psr7\NoSeekStream;
+use ImpreseeGuzzleHttp\Psr7\Stream;
 
 /**
- * @covers GuzzleHttp\Psr7\LimitStream
+ * @covers ImpreseeGuzzleHttp\Psr7\LimitStream
  */
 class LimitStreamTest extends BaseTest
 {

@@ -2,7 +2,7 @@
 
 require dirname(__DIR__, 2) . '/vendor/autoload.php';
 
-$request = \GuzzleHttp\Psr7\ServerRequest::fromGlobals();
+$request = \ImpreseeGuzzleHttp\Psr7\ServerRequest::fromGlobals();
 
 $output = [
     'method' => $request->getMethod(),

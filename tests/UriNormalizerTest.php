@@ -1,12 +1,12 @@
 <?php
 
-namespace GuzzleHttp\Tests\Psr7;
+namespace ImpreseeGuzzleHttp\Tests\Psr7;
 
-use GuzzleHttp\Psr7\Uri;
-use GuzzleHttp\Psr7\UriNormalizer;
+use ImpreseeGuzzleHttp\Psr7\Uri;
+use ImpreseeGuzzleHttp\Psr7\UriNormalizer;
 
 /**
- * @covers GuzzleHttp\Psr7\UriNormalizer
+ * @covers ImpreseeGuzzleHttp\Psr7\UriNormalizer
  */
 class UriNormalizerTest extends BaseTest
 {

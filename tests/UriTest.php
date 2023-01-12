@@ -1,11 +1,11 @@
 <?php
 
-namespace GuzzleHttp\Tests\Psr7;
+namespace ImpreseeGuzzleHttp\Tests\Psr7;
 
-use GuzzleHttp\Psr7\Uri;
+use ImpreseeGuzzleHttp\Psr7\Uri;
 
 /**
- * @covers GuzzleHttp\Psr7\Uri
+ * @covers ImpreseeGuzzleHttp\Psr7\Uri
  */
 class UriTest extends BaseTest
 {
@@ -668,7 +668,7 @@ class UriTest extends BaseTest
         // should not use late static binding to access private static members.
         // If they do, this will fatal.
         self::assertInstanceOf(
-            'GuzzleHttp\Tests\Psr7\ExtendedUriTest',
+            'ImpreseeGuzzleHttp\Tests\Psr7\ExtendedUriTest',
             new ExtendedUriTest('http://h:9/')
         );
     }
