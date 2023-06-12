@@ -35,21 +35,21 @@ class RequestTest extends BaseTest
     public function testCanConstructWithBody()
     {
         $r = new Request('GET', '/', [], 'baz');
-        self::assertInstanceOf('Psr\Http\Message\StreamInterface', $r->getBody());
+        self::assertInstanceOf('Impresee\Psr\Http\Message\StreamInterface', $r->getBody());
         self::assertSame('baz', (string) $r->getBody());
     }
 
     public function testNullBody()
     {
         $r = new Request('GET', '/', [], null);
-        self::assertInstanceOf('Psr\Http\Message\StreamInterface', $r->getBody());
+        self::assertInstanceOf('Impresee\Psr\Http\Message\StreamInterface', $r->getBody());
         self::assertSame('', (string) $r->getBody());
     }
 
     public function testFalseyBody()
     {
         $r = new Request('GET', '/', [], '0');
-        self::assertInstanceOf('Psr\Http\Message\StreamInterface', $r->getBody());
+        self::assertInstanceOf('Impresee\Psr\Http\Message\StreamInterface', $r->getBody());
         self::assertSame('0', (string) $r->getBody());
     }
 

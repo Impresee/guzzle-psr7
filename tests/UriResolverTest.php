@@ -20,7 +20,7 @@ class UriResolverTest extends BaseTest
         $baseUri = new Uri($base);
         $targetUri = UriResolver::resolve($baseUri, new Uri($rel));
 
-        self::assertInstanceOf('Psr\Http\Message\UriInterface', $targetUri);
+        self::assertInstanceOf('Impresee\Psr\Http\Message\UriInterface', $targetUri);
         self::assertSame($expectedTarget, (string) $targetUri);
         // This ensures there are no test cases that only work in the resolve() direction but not the
         // opposite via relativize(). This can happen when both base and rel URI are relative-path
@@ -36,7 +36,7 @@ class UriResolverTest extends BaseTest
         $baseUri = new Uri($base);
         $relativeUri = UriResolver::relativize($baseUri, new Uri($target));
 
-        self::assertInstanceOf('Psr\Http\Message\UriInterface', $relativeUri);
+        self::assertInstanceOf('Impresee\Psr\Http\Message\UriInterface', $relativeUri);
         // There are test-cases with too many dot-segments and relative references that are equal like "." == "./".
         // So apart from the same-as condition, this alternative success condition is necessary.
         self::assertTrue(
@@ -58,7 +58,7 @@ class UriResolverTest extends BaseTest
         $targetUri = new Uri($target);
         $relativeUri = UriResolver::relativize($baseUri, $targetUri);
 
-        self::assertInstanceOf('Psr\Http\Message\UriInterface', $relativeUri);
+        self::assertInstanceOf('Impresee\Psr\Http\Message\UriInterface', $relativeUri);
         self::assertSame($expectedRelativeReference, (string) $relativeUri);
 
         self::assertSame((string) UriResolver::resolve($baseUri, $targetUri), (string) UriResolver::resolve($baseUri, $relativeUri));

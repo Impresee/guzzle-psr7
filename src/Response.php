@@ -2,8 +2,8 @@
 
 namespace ImpreseeGuzzleHttp\Psr7;
 
-use Psr\Http\Message\ResponseInterface;
-use Psr\Http\Message\StreamInterface;
+use Impresee\Psr\Http\Message\ResponseInterface;
+use Impresee\Psr\Http\Message\StreamInterface;
 
 /**
  * PSR-7 response implementation.

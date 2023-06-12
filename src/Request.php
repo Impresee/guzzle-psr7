@@ -3,9 +3,9 @@
 namespace ImpreseeGuzzleHttp\Psr7;
 
 use InvalidArgumentException;
-use Psr\Http\Message\RequestInterface;
-use Psr\Http\Message\StreamInterface;
-use Psr\Http\Message\UriInterface;
+use Impresee\Psr\Http\Message\RequestInterface;
+use Impresee\Psr\Http\Message\StreamInterface;
+use Impresee\Psr\Http\Message\UriInterface;
 
 /**
  * PSR-7 request implementation.

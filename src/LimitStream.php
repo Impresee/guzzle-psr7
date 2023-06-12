@@ -2,7 +2,7 @@
 
 namespace ImpreseeGuzzleHttp\Psr7;
 
-use Psr\Http\Message\StreamInterface;
+use Impresee\Psr\Http\Message\StreamInterface;
 
 /**
  * Decorator used to return only a subset of a stream.

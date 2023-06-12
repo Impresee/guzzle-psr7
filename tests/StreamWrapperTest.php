@@ -80,7 +80,7 @@ class StreamWrapperTest extends BaseTest
 
     public function testValidatesStream()
     {
-        $stream = $this->getMockBuilder('Psr\Http\Message\StreamInterface')
+        $stream = $this->getMockBuilder('Impresee\Psr\Http\Message\StreamInterface')
             ->setMethods(['isReadable', 'isWritable'])
             ->getMockForAbstractClass();
         $stream->expects(self::once())
@@ -104,7 +104,7 @@ class StreamWrapperTest extends BaseTest
 
     public function testCanOpenReadonlyStream()
     {
-        $stream = $this->getMockBuilder('Psr\Http\Message\StreamInterface')
+        $stream = $this->getMockBuilder('Impresee\Psr\Http\Message\StreamInterface')
             ->setMethods(['isReadable', 'isWritable'])
             ->getMockForAbstractClass();
         $stream->expects(self::once())

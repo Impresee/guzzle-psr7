@@ -20,7 +20,7 @@ class UriNormalizerTest extends BaseTest
 
         $normalizedUri = UriNormalizer::normalize($uri, UriNormalizer::CAPITALIZE_PERCENT_ENCODING);
 
-        self::assertInstanceOf('Psr\Http\Message\UriInterface', $normalizedUri);
+        self::assertInstanceOf('Impresee\Psr\Http\Message\UriInterface', $normalizedUri);
         self::assertSame("/$expectEncoding?$expectEncoding", (string) $normalizedUri);
     }
 
@@ -39,7 +39,7 @@ class UriNormalizerTest extends BaseTest
 
         $normalizedUri = UriNormalizer::normalize($uri, UriNormalizer::DECODE_UNRESERVED_CHARACTERS);
 
-        self::assertInstanceOf('Psr\Http\Message\UriInterface', $normalizedUri);
+        self::assertInstanceOf('Impresee\Psr\Http\Message\UriInterface', $normalizedUri);
         self::assertSame("/$char%2F%5B$char?$char%2F%5B$char", (string) $normalizedUri);
     }
 
@@ -59,7 +59,7 @@ class UriNormalizerTest extends BaseTest
     {
         $normalizedUri = UriNormalizer::normalize(new Uri($uri), UriNormalizer::CONVERT_EMPTY_PATH);
 
-        self::assertInstanceOf('Psr\Http\Message\UriInterface', $normalizedUri);
+        self::assertInstanceOf('Impresee\Psr\Http\Message\UriInterface', $normalizedUri);
         self::assertSame($expected, (string) $normalizedUri);
     }
 
@@ -77,20 +77,20 @@ class UriNormalizerTest extends BaseTest
         $uri = new Uri('file://localhost/myfile');
         $normalizedUri = UriNormalizer::normalize($uri, UriNormalizer::REMOVE_DEFAULT_HOST);
 
-        self::assertInstanceOf('Psr\Http\Message\UriInterface', $normalizedUri);
+        self::assertInstanceOf('Impresee\Psr\Http\Message\UriInterface', $normalizedUri);
         self::assertSame('file:///myfile', (string) $normalizedUri);
     }
 
     public function testRemoveDefaultPort()
     {
-        $uri = $this->getMockBuilder('Psr\Http\Message\UriInterface')->getMock();
+        $uri = $this->getMockBuilder('Impresee\Psr\Http\Message\UriInterface')->getMock();
         $uri->expects(self::any())->method('getScheme')->will(self::returnValue('http'));
         $uri->expects(self::any())->method('getPort')->will(self::returnValue(80));
         $uri->expects(self::once())->method('withPort')->with(null)->will(self::returnValue(new Uri('http://example.org')));
 
         $normalizedUri = UriNormalizer::normalize($uri, UriNormalizer::REMOVE_DEFAULT_PORT);
 
-        self::assertInstanceOf('Psr\Http\Message\UriInterface', $normalizedUri);
+        self::assertInstanceOf('Impresee\Psr\Http\Message\UriInterface', $normalizedUri);
         self::assertNull($normalizedUri->getPort());
     }
 
@@ -99,7 +99,7 @@ class UriNormalizerTest extends BaseTest
         $uri = new Uri('http://example.org/../a/b/../c/./d.html');
         $normalizedUri = UriNormalizer::normalize($uri, UriNormalizer::REMOVE_DOT_SEGMENTS);
 
-        self::assertInstanceOf('Psr\Http\Message\UriInterface', $normalizedUri);
+        self::assertInstanceOf('Impresee\Psr\Http\Message\UriInterface', $normalizedUri);
         self::assertSame('http://example.org/a/c/d.html', (string) $normalizedUri);
     }
 
@@ -108,7 +108,7 @@ class UriNormalizerTest extends BaseTest
         $uri = new Uri('/../a/b/../c/./d.html');
         $normalizedUri = UriNormalizer::normalize($uri, UriNormalizer::REMOVE_DOT_SEGMENTS);
 
-        self::assertInstanceOf('Psr\Http\Message\UriInterface', $normalizedUri);
+        self::assertInstanceOf('Impresee\Psr\Http\Message\UriInterface', $normalizedUri);
         self::assertSame('/a/c/d.html', (string) $normalizedUri);
     }
 
@@ -117,7 +117,7 @@ class UriNormalizerTest extends BaseTest
         $uri = new Uri('../c/./d.html');
         $normalizedUri = UriNormalizer::normalize($uri, UriNormalizer::REMOVE_DOT_SEGMENTS);
 
-        self::assertInstanceOf('Psr\Http\Message\UriInterface', $normalizedUri);
+        self::assertInstanceOf('Impresee\Psr\Http\Message\UriInterface', $normalizedUri);
         self::assertSame('../c/./d.html', (string) $normalizedUri);
     }
 
@@ -126,7 +126,7 @@ class UriNormalizerTest extends BaseTest
         $uri = new Uri('http://example.org//foo///bar/bam.html');
         $normalizedUri = UriNormalizer::normalize($uri, UriNormalizer::REMOVE_DUPLICATE_SLASHES);
 
-        self::assertInstanceOf('Psr\Http\Message\UriInterface', $normalizedUri);
+        self::assertInstanceOf('Impresee\Psr\Http\Message\UriInterface', $normalizedUri);
         self::assertSame('http://example.org/foo/bar/bam.html', (string) $normalizedUri);
     }
 
@@ -135,7 +135,7 @@ class UriNormalizerTest extends BaseTest
         $uri = new Uri('?lang=en&article=fred');
         $normalizedUri = UriNormalizer::normalize($uri, UriNormalizer::SORT_QUERY_PARAMETERS);
 
-        self::assertInstanceOf('Psr\Http\Message\UriInterface', $normalizedUri);
+        self::assertInstanceOf('Impresee\Psr\Http\Message\UriInterface', $normalizedUri);
         self::assertSame('?article=fred&lang=en', (string) $normalizedUri);
     }
 
@@ -144,7 +144,7 @@ class UriNormalizerTest extends BaseTest
         $uri = new Uri('?a=b&b=c&a=a&a&b=a&b=b&a=d&a=c');
         $normalizedUri = UriNormalizer::normalize($uri, UriNormalizer::SORT_QUERY_PARAMETERS);
 
-        self::assertInstanceOf('Psr\Http\Message\UriInterface', $normalizedUri);
+        self::assertInstanceOf('Impresee\Psr\Http\Message\UriInterface', $normalizedUri);
         self::assertSame('?a&a=a&a=b&a=c&a=d&b=a&b=b&b=c', (string) $normalizedUri);
     }
 

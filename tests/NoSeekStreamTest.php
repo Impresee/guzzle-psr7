@@ -12,7 +12,7 @@ class NoSeekStreamTest extends BaseTest
 {
     public function testCannotSeek()
     {
-        $s = $this->getMockBuilder('Psr\Http\Message\StreamInterface')
+        $s = $this->getMockBuilder('Impresee\Psr\Http\Message\StreamInterface')
             ->setMethods(['isSeekable', 'seek'])
             ->getMockForAbstractClass();
         $s->expects(self::never())->method('seek');

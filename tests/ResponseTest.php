@@ -18,7 +18,7 @@ class ResponseTest extends BaseTest
         self::assertSame('1.1', $r->getProtocolVersion());
         self::assertSame('OK', $r->getReasonPhrase());
         self::assertSame([], $r->getHeaders());
-        self::assertInstanceOf('Psr\Http\Message\StreamInterface', $r->getBody());
+        self::assertInstanceOf('Impresee\Psr\Http\Message\StreamInterface', $r->getBody());
         self::assertSame('', (string) $r->getBody());
     }
 
@@ -75,21 +75,21 @@ class ResponseTest extends BaseTest
     public function testCanConstructWithBody()
     {
         $r = new Response(200, [], 'baz');
-        self::assertInstanceOf('Psr\Http\Message\StreamInterface', $r->getBody());
+        self::assertInstanceOf('Impresee\Psr\Http\Message\StreamInterface', $r->getBody());
         self::assertSame('baz', (string) $r->getBody());
     }
 
     public function testNullBody()
     {
         $r = new Response(200, [], null);
-        self::assertInstanceOf('Psr\Http\Message\StreamInterface', $r->getBody());
+        self::assertInstanceOf('Impresee\Psr\Http\Message\StreamInterface', $r->getBody());
         self::assertSame('', (string) $r->getBody());
     }
 
     public function testFalseyBody()
     {
         $r = new Response(200, [], '0');
-        self::assertInstanceOf('Psr\Http\Message\StreamInterface', $r->getBody());
+        self::assertInstanceOf('Impresee\Psr\Http\Message\StreamInterface', $r->getBody());
         self::assertSame('0', (string) $r->getBody());
     }
 
@@ -142,7 +142,7 @@ class ResponseTest extends BaseTest
     {
         $b = Psr7\Utils::streamFor('0');
         $r = (new Response())->withBody($b);
-        self::assertInstanceOf('Psr\Http\Message\StreamInterface', $r->getBody());
+        self::assertInstanceOf('Impresee\Psr\Http\Message\StreamInterface', $r->getBody());
         self::assertSame('0', (string) $r->getBody());
     }
 

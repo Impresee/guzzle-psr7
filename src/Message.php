@@ -2,9 +2,9 @@
 
 namespace ImpreseeGuzzleHttp\Psr7;
 
-use Psr\Http\Message\MessageInterface;
-use Psr\Http\Message\RequestInterface;
-use Psr\Http\Message\ResponseInterface;
+use Impresee\Psr\Http\Message\MessageInterface;
+use Impresee\Psr\Http\Message\RequestInterface;
+use Impresee\Psr\Http\Message\ResponseInterface;
 
 final class Message
 {

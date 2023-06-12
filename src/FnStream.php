@@ -2,7 +2,7 @@
 
 namespace ImpreseeGuzzleHttp\Psr7;
 
-use Psr\Http\Message\StreamInterface;
+use Impresee\Psr\Http\Message\StreamInterface;
 
 /**
  * Compose stream implementations based on a hash of functions.

@@ -4,7 +4,7 @@ namespace ImpreseeGuzzleHttp\Tests\Psr7;
 
 use ImpreseeGuzzleHttp\Psr7;
 use ImpreseeGuzzleHttp\Psr7\StreamDecoratorTrait;
-use Psr\Http\Message\StreamInterface;
+use Impresee\Psr\Http\Message\StreamInterface;
 
 class Str implements StreamInterface
 {
@@ -37,7 +37,7 @@ class StreamDecoratorTraitTest extends BaseTest
 
     public function testCatchesExceptionsWhenCastingToString()
     {
-        $s = $this->getMockBuilder('Psr\Http\Message\StreamInterface')
+        $s = $this->getMockBuilder('Impresee\Psr\Http\Message\StreamInterface')
             ->setMethods(['read'])
             ->getMockForAbstractClass();
         $s->expects(self::once())

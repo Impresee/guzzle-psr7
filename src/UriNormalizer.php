@@ -2,7 +2,7 @@
 
 namespace ImpreseeGuzzleHttp\Psr7;
 
-use Psr\Http\Message\UriInterface;
+use Impresee\Psr\Http\Message\UriInterface;
 
 /**
  * Provides methods to normalize and compare URIs.

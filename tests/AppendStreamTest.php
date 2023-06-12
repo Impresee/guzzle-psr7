@@ -10,7 +10,7 @@ class AppendStreamTest extends BaseTest
     public function testValidatesStreamsAreReadable()
     {
         $a = new AppendStream();
-        $s = $this->getMockBuilder('Psr\Http\Message\StreamInterface')
+        $s = $this->getMockBuilder('Impresee\Psr\Http\Message\StreamInterface')
             ->setMethods(['isReadable'])
             ->getMockForAbstractClass();
         $s->expects(self::once())
@@ -34,7 +34,7 @@ class AppendStreamTest extends BaseTest
     public function testTriesToRewindOnSeek()
     {
         $a = new AppendStream();
-        $s = $this->getMockBuilder('Psr\Http\Message\StreamInterface')
+        $s = $this->getMockBuilder('Impresee\Psr\Http\Message\StreamInterface')
             ->setMethods(['isReadable', 'rewind', 'isSeekable'])
             ->getMockForAbstractClass();
         $s->expects(self::once())
@@ -169,7 +169,7 @@ class AppendStreamTest extends BaseTest
         ]);
         self::assertSame(6, $a->getSize());
 
-        $s = $this->getMockBuilder('Psr\Http\Message\StreamInterface')
+        $s = $this->getMockBuilder('Impresee\Psr\Http\Message\StreamInterface')
             ->setMethods(['isSeekable', 'isReadable'])
             ->getMockForAbstractClass();
         $s->expects(self::once())
@@ -184,7 +184,7 @@ class AppendStreamTest extends BaseTest
 
     public function testCatchesExceptionsWhenCastingToString()
     {
-        $s = $this->getMockBuilder('Psr\Http\Message\StreamInterface')
+        $s = $this->getMockBuilder('Impresee\Psr\Http\Message\StreamInterface')
             ->setMethods(['isSeekable', 'read', 'isReadable', 'eof'])
             ->getMockForAbstractClass();
         $s->expects(self::once())

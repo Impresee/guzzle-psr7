@@ -211,7 +211,7 @@ class UriTest extends BaseTest
      */
     public function testIsDefaultPort($scheme, $port, $isDefaultPort)
     {
-        $uri = $this->getMockBuilder('Psr\Http\Message\UriInterface')->getMock();
+        $uri = $this->getMockBuilder('Impresee\Psr\Http\Message\UriInterface')->getMock();
         $uri->expects(self::any())->method('getScheme')->will(self::returnValue($scheme));
         $uri->expects(self::any())->method('getPort')->will(self::returnValue($port));
 

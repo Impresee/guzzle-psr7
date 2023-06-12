@@ -370,7 +370,7 @@ class UtilsTest extends BaseTest
 
         $r1 = new Psr7\ServerRequest('GET', 'http://foo.com');
         $r2 = Psr7\Utils::modifyRequest($r1, []);
-        self::assertInstanceOf('Psr\Http\Message\ServerRequestInterface', $r2);
+        self::assertInstanceOf('Impresee\Psr\Http\Message\ServerRequestInterface', $r2);
     }
 
     public function testReturnsUriAsIsWhenNoChanges()
@@ -405,7 +405,7 @@ class UtilsTest extends BaseTest
 
         $r1 = new Psr7\ServerRequest('GET', 'http://foo.com');
         $r2 = Psr7\Utils::modifyRequest($r1, ['remove_headers' => ['non-existent']]);
-        self::assertInstanceOf('Psr\Http\Message\ServerRequestInterface', $r2);
+        self::assertInstanceOf('Impresee\Psr\Http\Message\ServerRequestInterface', $r2);
     }
 
     public function testModifyServerRequestWithUploadedFiles()
