@@ -7,7 +7,6 @@ functionality like query string parsing.
 ![CI](https://github.com/guzzle/psr7/workflows/CI/badge.svg)
 ![Static analysis](https://github.com/guzzle/psr7/workflows/Static%20analysis/badge.svg)
 
-
 # Installation
 
 ```shell
@@ -19,15 +18,14 @@ composer require guzzlehttp/psr7
 This package comes with a number of stream implementations and stream
 decorators.
 
-
 ## AppendStream
 
-`GuzzleHttp\Psr7\AppendStream`
+`ImpreseeGuzzleHttp\Psr7\AppendStream`
 
 Reads from multiple streams, one after the other.
 
 ```php
-use GuzzleHttp\Psr7;
+use ImpreseeGuzzleHttp\Psr7;
 
 $a = Psr7\Utils::streamFor('abc, ');
 $b = Psr7\Utils::streamFor('123.');
@@ -38,10 +36,9 @@ $composed->addStream(Psr7\Utils::streamFor(' Above all listen to me'));
 echo $composed; // abc, 123. Above all listen to me.
 ```
 
-
 ## BufferStream
 
-`GuzzleHttp\Psr7\BufferStream`
+`ImpreseeGuzzleHttp\Psr7\BufferStream`
 
 Provides a buffer stream that can be written to fill a buffer, and read
 from to remove bytes from the buffer.
@@ -51,13 +48,12 @@ what the configured high water mark of the stream is, or the maximum
 preferred size of the buffer.
 
 ```php
-use GuzzleHttp\Psr7;
+use ImpreseeGuzzleHttp\Psr7;
 
 // When more than 1024 bytes are in the buffer, it will begin returning
 // false to writes. This is an indication that writers should slow down.
 $buffer = new Psr7\BufferStream(1024);
 ```
-
 
 ## CachingStream
 
@@ -69,7 +65,7 @@ a PHP temp stream so that previously read bytes are cached first in memory,
 then on disk.
 
 ```php
-use GuzzleHttp\Psr7;
+use ImpreseeGuzzleHttp\Psr7;
 
 $original = Psr7\Utils::streamFor(fopen('http://www.google.com', 'r'));
 $stream = new Psr7\CachingStream($original);
@@ -83,16 +79,15 @@ echo $stream->tell();
 // 0
 ```
 
-
 ## DroppingStream
 
-`GuzzleHttp\Psr7\DroppingStream`
+`ImpreseeGuzzleHttp\Psr7\DroppingStream`
 
 Stream decorator that begins dropping data once the size of the underlying
 stream becomes too full.
 
 ```php
-use GuzzleHttp\Psr7;
+use ImpreseeGuzzleHttp\Psr7;
 
 // Create an empty stream
 $stream = Psr7\Utils::streamFor();
@@ -104,10 +99,9 @@ $dropping->write('01234567890123456789');
 echo $stream; // 0123456789
 ```
 
-
 ## FnStream
 
-`GuzzleHttp\Psr7\FnStream`
+`ImpreseeGuzzleHttp\Psr7\FnStream`
 
 Compose stream implementations based on a hash of functions.
 
@@ -116,7 +110,7 @@ to create a concrete class for a simple extension point.
 
 ```php
 
-use GuzzleHttp\Psr7;
+use ImpreseeGuzzleHttp\Psr7;
 
 $stream = Psr7\Utils::streamFor('hi');
 $fnStream = Psr7\FnStream::decorate($stream, [
@@ -131,10 +125,9 @@ $fnStream->rewind();
 // Outputs: About to rewind - rewound!
 ```
 
-
 ## InflateStream
 
-`GuzzleHttp\Psr7\InflateStream`
+`ImpreseeGuzzleHttp\Psr7\InflateStream`
 
 Uses PHP's zlib.inflate filter to inflate zlib (HTTP deflate, RFC1950) or gzipped (RFC1952) content.
 
@@ -142,16 +135,15 @@ This stream decorator converts the provided stream to a PHP stream resource,
 then appends the zlib.inflate filter. The stream is then converted back
 to a Guzzle stream resource to be used as a Guzzle stream.
 
-
 ## LazyOpenStream
 
-`GuzzleHttp\Psr7\LazyOpenStream`
+`ImpreseeGuzzleHttp\Psr7\LazyOpenStream`
 
 Lazily reads or writes to a file that is opened only after an IO operation
 take place on the stream.
 
 ```php
-use GuzzleHttp\Psr7;
+use ImpreseeGuzzleHttp\Psr7;
 
 $stream = new Psr7\LazyOpenStream('/path/to/file', 'r');
 // The file has not yet been opened...
@@ -160,17 +152,16 @@ echo $stream->read(10);
 // The file is opened and read from only when needed.
 ```
 
-
 ## LimitStream
 
-`GuzzleHttp\Psr7\LimitStream`
+`ImpreseeGuzzleHttp\Psr7\LimitStream`
 
 LimitStream can be used to read a subset or slice of an existing stream object.
 This can be useful for breaking a large file into smaller pieces to be sent in
 chunks (e.g. Amazon S3's multipart upload API).
 
 ```php
-use GuzzleHttp\Psr7;
+use ImpreseeGuzzleHttp\Psr7;
 
 $original = Psr7\Utils::streamFor(fopen('/tmp/test.txt', 'r+'));
 echo $original->getSize();
@@ -184,23 +175,21 @@ echo $stream->tell();
 // >>> 0
 ```
 
-
 ## MultipartStream
 
-`GuzzleHttp\Psr7\MultipartStream`
+`ImpreseeGuzzleHttp\Psr7\MultipartStream`
 
 Stream that when read returns bytes for a streaming multipart or
 multipart/form-data stream.
 
-
 ## NoSeekStream
 
-`GuzzleHttp\Psr7\NoSeekStream`
+`ImpreseeGuzzleHttp\Psr7\NoSeekStream`
 
 NoSeekStream wraps a stream and does not allow seeking.
 
 ```php
-use GuzzleHttp\Psr7;
+use ImpreseeGuzzleHttp\Psr7;
 
 $original = Psr7\Utils::streamFor('foo');
 $noSeek = new Psr7\NoSeekStream($original);
@@ -214,10 +203,9 @@ var_export($noSeek->read(3));
 // NULL
 ```
 
-
 ## PumpStream
 
-`GuzzleHttp\Psr7\PumpStream`
+`ImpreseeGuzzleHttp\Psr7\PumpStream`
 
 Provides a read only stream that pumps data from a PHP callable.
 
@@ -228,11 +216,10 @@ returned by the provided callable is buffered internally until drained using
 the read() function of the PumpStream. The provided callable MUST return
 false when there is no more data to read.
 
-
 ## Implementing stream decorators
 
 Creating a stream decorator is very easy thanks to the
-`GuzzleHttp\Psr7\StreamDecoratorTrait`. This trait provides methods that
+`ImpreseeGuzzleHttp\Psr7\StreamDecoratorTrait`. This trait provides methods that
 implement `Psr\Http\Message\StreamInterface` by proxying to an underlying
 stream. Just `use` the `StreamDecoratorTrait` and implement your custom
 methods.
@@ -243,7 +230,7 @@ byte is read from a stream. This could be implemented by overriding the
 
 ```php
 use Psr\Http\Message\StreamInterface;
-use GuzzleHttp\Psr7\StreamDecoratorTrait;
+use ImpreseeGuzzleHttp\Psr7\StreamDecoratorTrait;
 
 class EofCallbackStream implements StreamInterface
 {
@@ -276,7 +263,7 @@ class EofCallbackStream implements StreamInterface
 This decorator could be added to any existing stream and used like so:
 
 ```php
-use GuzzleHttp\Psr7;
+use ImpreseeGuzzleHttp\Psr7;
 
 $original = Psr7\Utils::streamFor('foo');
 
@@ -292,42 +279,38 @@ $eofStream->read(3);
 // echoes "EOF!"
 ```
 
-
 ## PHP StreamWrapper
 
-You can use the `GuzzleHttp\Psr7\StreamWrapper` class if you need to use a
+You can use the `ImpreseeGuzzleHttp\Psr7\StreamWrapper` class if you need to use a
 PSR-7 stream as a PHP stream resource.
 
-Use the `GuzzleHttp\Psr7\StreamWrapper::getResource()` method to create a PHP
+Use the `ImpreseeGuzzleHttp\Psr7\StreamWrapper::getResource()` method to create a PHP
 stream from a PSR-7 stream.
 
 ```php
-use GuzzleHttp\Psr7\StreamWrapper;
+use ImpreseeGuzzleHttp\Psr7\StreamWrapper;
 
-$stream = GuzzleHttp\Psr7\Utils::streamFor('hello!');
+$stream = ImpreseeGuzzleHttp\Psr7\Utils::streamFor('hello!');
 $resource = StreamWrapper::getResource($stream);
 echo fread($resource, 6); // outputs hello!
 ```
 
-
 # Static API
 
-There are various static methods available under the `GuzzleHttp\Psr7` namespace.
+There are various static methods available under the `ImpreseeGuzzleHttp\Psr7` namespace.
 
-
-## `GuzzleHttp\Psr7\Message::toString`
+## `ImpreseeGuzzleHttp\Psr7\Message::toString`
 
 `public static function toString(MessageInterface $message): string`
 
 Returns the string representation of an HTTP message.
 
 ```php
-$request = new GuzzleHttp\Psr7\Request('GET', 'http://example.com');
-echo GuzzleHttp\Psr7\Message::toString($request);
+$request = new ImpreseeGuzzleHttp\Psr7\Request('GET', 'http://example.com');
+echo ImpreseeGuzzleHttp\Psr7\Message::toString($request);
 ```
 
-
-## `GuzzleHttp\Psr7\Message::bodySummary`
+## `ImpreseeGuzzleHttp\Psr7\Message::bodySummary`
 
 `public static function bodySummary(MessageInterface $message, int $truncateAt = 120): string|null`
 
@@ -335,8 +318,7 @@ Get a short summary of the message body.
 
 Will return `null` if the response is not printable.
 
-
-## `GuzzleHttp\Psr7\Message::rewindBody`
+## `ImpreseeGuzzleHttp\Psr7\Message::rewindBody`
 
 `public static function rewindBody(MessageInterface $message): void`
 
@@ -345,8 +327,7 @@ Attempts to rewind a message body and throws an exception on failure.
 The body of the message will only be rewound if a call to `tell()`
 returns a value other than `0`.
 
-
-## `GuzzleHttp\Psr7\Message::parseMessage`
+## `ImpreseeGuzzleHttp\Psr7\Message::parseMessage`
 
 `public static function parseMessage(string $message): array`
 
@@ -356,29 +337,25 @@ The array contains the "start-line" key containing the start line of
 the message, "headers" key containing an associative array of header
 array values, and a "body" key containing the body of the message.
 
-
-## `GuzzleHttp\Psr7\Message::parseRequestUri`
+## `ImpreseeGuzzleHttp\Psr7\Message::parseRequestUri`
 
 `public static function parseRequestUri(string $path, array $headers): string`
 
 Constructs a URI for an HTTP request message.
 
-
-## `GuzzleHttp\Psr7\Message::parseRequest`
+## `ImpreseeGuzzleHttp\Psr7\Message::parseRequest`
 
 `public static function parseRequest(string $message): Request`
 
 Parses a request message string into a request object.
 
-
-## `GuzzleHttp\Psr7\Message::parseResponse`
+## `ImpreseeGuzzleHttp\Psr7\Message::parseResponse`
 
 `public static function parseResponse(string $message): Response`
 
 Parses a response message string into a response object.
 
-
-## `GuzzleHttp\Psr7\Header::parse`
+## `ImpreseeGuzzleHttp\Psr7\Header::parse`
 
 `public static function parse(string|array $header): array`
 
@@ -387,8 +364,7 @@ array of associative arrays representing the header key value pair data
 of the header. When a parameter does not contain a value, but just
 contains a key, this function will inject a key with a '' string value.
 
-
-## `GuzzleHttp\Psr7\Header::splitList`
+## `ImpreseeGuzzleHttp\Psr7\Header::splitList`
 
 `public static function splitList(string|string[] $header): string[]`
 
@@ -401,8 +377,7 @@ $knownEtags = Header::splitList($request->getHeader('if-none-match'));
 
 Example headers include `accept`, `cache-control` and `if-none-match`.
 
-
-## `GuzzleHttp\Psr7\Header::normalize` (deprecated)
+## `ImpreseeGuzzleHttp\Psr7\Header::normalize` (deprecated)
 
 `public static function normalize(string|array $header): array`
 
@@ -413,8 +388,7 @@ documentation.
 Converts an array of header values that may contain comma separated
 headers into an array of headers with no comma separated values.
 
-
-## `GuzzleHttp\Psr7\Query::parse`
+## `ImpreseeGuzzleHttp\Psr7\Query::parse`
 
 `public static function parse(string $str, int|bool $urlEncoding = true): array`
 
@@ -425,8 +399,7 @@ value pair will become an array. This function does not parse nested
 PHP style arrays into an associative array (e.g., `foo[a]=1&foo[b]=2`
 will be parsed into `['foo[a]' => '1', 'foo[b]' => '2'])`.
 
-
-## `GuzzleHttp\Psr7\Query::build`
+## `ImpreseeGuzzleHttp\Psr7\Query::build`
 
 `public static function build(array $params, int|false $encoding = PHP_QUERY_RFC3986): string`
 
@@ -436,31 +409,27 @@ This function can use the return value of `parse()` to build a query
 string. This function does not modify the provided keys when an array is
 encountered (like `http_build_query()` would).
 
-
-## `GuzzleHttp\Psr7\Utils::caselessRemove`
+## `ImpreseeGuzzleHttp\Psr7\Utils::caselessRemove`
 
 `public static function caselessRemove(iterable<string> $keys, $keys, array $data): array`
 
 Remove the items given by the keys, case insensitively from the data.
 
-
-## `GuzzleHttp\Psr7\Utils::copyToStream`
+## `ImpreseeGuzzleHttp\Psr7\Utils::copyToStream`
 
 `public static function copyToStream(StreamInterface $source, StreamInterface $dest, int $maxLen = -1): void`
 
 Copy the contents of a stream into another stream until the given number
 of bytes have been read.
 
-
-## `GuzzleHttp\Psr7\Utils::copyToString`
+## `ImpreseeGuzzleHttp\Psr7\Utils::copyToString`
 
 `public static function copyToString(StreamInterface $stream, int $maxLen = -1): string`
 
 Copy the contents of a stream into a string until the given number of
 bytes have been read.
 
-
-## `GuzzleHttp\Psr7\Utils::hash`
+## `ImpreseeGuzzleHttp\Psr7\Utils::hash`
 
 `public static function hash(StreamInterface $stream, string $algo, bool $rawOutput = false): string`
 
@@ -469,8 +438,7 @@ Calculate a hash of a stream.
 This method reads the entire stream to calculate a rolling hash, based on
 PHP's `hash_init` functions.
 
-
-## `GuzzleHttp\Psr7\Utils::modifyRequest`
+## `ImpreseeGuzzleHttp\Psr7\Utils::modifyRequest`
 
 `public static function modifyRequest(RequestInterface $request, array $changes): RequestInterface`
 
@@ -479,23 +447,21 @@ Clone and modify a request with the given changes.
 This method is useful for reducing the number of clones needed to mutate
 a message.
 
-- method: (string) Changes the HTTP method.
-- set_headers: (array) Sets the given headers.
-- remove_headers: (array) Remove the given headers.
-- body: (mixed) Sets the given body.
-- uri: (UriInterface) Set the URI.
-- query: (string) Set the query string value of the URI.
-- version: (string) Set the protocol version.
+-   method: (string) Changes the HTTP method.
+-   set_headers: (array) Sets the given headers.
+-   remove_headers: (array) Remove the given headers.
+-   body: (mixed) Sets the given body.
+-   uri: (UriInterface) Set the URI.
+-   query: (string) Set the query string value of the URI.
+-   version: (string) Set the protocol version.
 
-
-## `GuzzleHttp\Psr7\Utils::readLine`
+## `ImpreseeGuzzleHttp\Psr7\Utils::readLine`
 
 `public static function readLine(StreamInterface $stream, int $maxLength = null): string`
 
 Read a line from the stream up to the maximum allowed buffer length.
 
-
-## `GuzzleHttp\Psr7\Utils::streamFor`
+## `ImpreseeGuzzleHttp\Psr7\Utils::streamFor`
 
 `public static function streamFor(resource|string|null|int|float|bool|StreamInterface|callable|\Iterator $resource = '', array $options = []): StreamInterface`
 
@@ -503,35 +469,35 @@ Create a new stream based on the input type.
 
 Options is an associative array that can contain the following keys:
 
-- metadata: Array of custom metadata.
-- size: Size of the stream.
+-   metadata: Array of custom metadata.
+-   size: Size of the stream.
 
 This method accepts the following `$resource` types:
 
-- `Psr\Http\Message\StreamInterface`: Returns the value as-is.
-- `string`: Creates a stream object that uses the given string as the contents.
-- `resource`: Creates a stream object that wraps the given PHP stream resource.
-- `Iterator`: If the provided value implements `Iterator`, then a read-only
-  stream object will be created that wraps the given iterable. Each time the
-  stream is read from, data from the iterator will fill a buffer and will be
-  continuously called until the buffer is equal to the requested read size.
-  Subsequent read calls will first read from the buffer and then call `next`
-  on the underlying iterator until it is exhausted.
-- `object` with `__toString()`: If the object has the `__toString()` method,
-  the object will be cast to a string and then a stream will be returned that
-  uses the string value.
-- `NULL`: When `null` is passed, an empty stream object is returned.
-- `callable` When a callable is passed, a read-only stream object will be
-  created that invokes the given callable. The callable is invoked with the
-  number of suggested bytes to read. The callable can return any number of
-  bytes, but MUST return `false` when there is no more data to return. The
-  stream object that wraps the callable will invoke the callable until the
-  number of requested bytes are available. Any additional bytes will be
-  buffered and used in subsequent reads.
+-   `Psr\Http\Message\StreamInterface`: Returns the value as-is.
+-   `string`: Creates a stream object that uses the given string as the contents.
+-   `resource`: Creates a stream object that wraps the given PHP stream resource.
+-   `Iterator`: If the provided value implements `Iterator`, then a read-only
+    stream object will be created that wraps the given iterable. Each time the
+    stream is read from, data from the iterator will fill a buffer and will be
+    continuously called until the buffer is equal to the requested read size.
+    Subsequent read calls will first read from the buffer and then call `next`
+    on the underlying iterator until it is exhausted.
+-   `object` with `__toString()`: If the object has the `__toString()` method,
+    the object will be cast to a string and then a stream will be returned that
+    uses the string value.
+-   `NULL`: When `null` is passed, an empty stream object is returned.
+-   `callable` When a callable is passed, a read-only stream object will be
+    created that invokes the given callable. The callable is invoked with the
+    number of suggested bytes to read. The callable can return any number of
+    bytes, but MUST return `false` when there is no more data to return. The
+    stream object that wraps the callable will invoke the callable until the
+    number of requested bytes are available. Any additional bytes will be
+    buffered and used in subsequent reads.
 
 ```php
-$stream = GuzzleHttp\Psr7\Utils::streamFor('foo');
-$stream = GuzzleHttp\Psr7\Utils::streamFor(fopen('/path/to/file', 'r'));
+$stream = ImpreseeGuzzleHttp\Psr7\Utils::streamFor('foo');
+$stream = ImpreseeGuzzleHttp\Psr7\Utils::streamFor(fopen('/path/to/file', 'r'));
 
 $generator = function ($bytes) {
     for ($i = 0; $i < $bytes; $i++) {
@@ -539,11 +505,10 @@ $generator = function ($bytes) {
     }
 }
 
-$stream = GuzzleHttp\Psr7\Utils::streamFor($generator(100));
+$stream = ImpreseeGuzzleHttp\Psr7\Utils::streamFor($generator(100));
 ```
 
-
-## `GuzzleHttp\Psr7\Utils::tryFopen`
+## `ImpreseeGuzzleHttp\Psr7\Utils::tryFopen`
 
 `public static function tryFopen(string $filename, string $mode): resource`
 
@@ -552,8 +517,7 @@ Safely opens a PHP stream resource using a filename.
 When fopen fails, PHP normally raises a warning. This function adds an
 error handler that checks for errors and throws an exception instead.
 
-
-## `GuzzleHttp\Psr7\Utils::tryGetContents`
+## `ImpreseeGuzzleHttp\Psr7\Utils::tryGetContents`
 
 `public static function tryGetContents(resource $stream): string`
 
@@ -563,8 +527,7 @@ When stream_get_contents fails, PHP normally raises a warning. This
 function adds an error handler that checks for errors and throws an
 exception instead.
 
-
-## `GuzzleHttp\Psr7\Utils::uriFor`
+## `ImpreseeGuzzleHttp\Psr7\Utils::uriFor`
 
 `public static function uriFor(string|UriInterface $uri): UriInterface`
 
@@ -574,54 +537,50 @@ This function accepts a string or UriInterface and returns a
 UriInterface for the given value. If the value is already a
 UriInterface, it is returned as-is.
 
-
-## `GuzzleHttp\Psr7\MimeType::fromFilename`
+## `ImpreseeGuzzleHttp\Psr7\MimeType::fromFilename`
 
 `public static function fromFilename(string $filename): string|null`
 
 Determines the mimetype of a file by looking at its extension.
 
-
-## `GuzzleHttp\Psr7\MimeType::fromExtension`
+## `ImpreseeGuzzleHttp\Psr7\MimeType::fromExtension`
 
 `public static function fromExtension(string $extension): string|null`
 
 Maps a file extensions to a mimetype.
 
-
 ## Upgrading from Function API
 
 The static API was first introduced in 1.7.0, in order to mitigate problems with functions conflicting between global and local copies of the package. The function API was removed in 2.0.0. A migration table has been provided here for your convenience:
 
-| Original Function | Replacement Method |
-|----------------|----------------|
-| `str` | `Message::toString` |
-| `uri_for` | `Utils::uriFor` |
-| `stream_for` | `Utils::streamFor` |
-| `parse_header` | `Header::parse` |
-| `normalize_header` | `Header::normalize` |
-| `modify_request` | `Utils::modifyRequest` |
-| `rewind_body` | `Message::rewindBody` |
-| `try_fopen` | `Utils::tryFopen` |
-| `copy_to_string` | `Utils::copyToString` |
-| `copy_to_stream` | `Utils::copyToStream` |
-| `hash` | `Utils::hash` |
-| `readline` | `Utils::readLine` |
-| `parse_request` | `Message::parseRequest` |
-| `parse_response` | `Message::parseResponse` |
-| `parse_query` | `Query::parse` |
-| `build_query` | `Query::build` |
-| `mimetype_from_filename` | `MimeType::fromFilename` |
-| `mimetype_from_extension` | `MimeType::fromExtension` |
-| `_parse_message` | `Message::parseMessage` |
-| `_parse_request_uri` | `Message::parseRequestUri` |
-| `get_message_body_summary` | `Message::bodySummary` |
-| `_caseless_remove` | `Utils::caselessRemove` |
-
+| Original Function          | Replacement Method         |
+| -------------------------- | -------------------------- |
+| `str`                      | `Message::toString`        |
+| `uri_for`                  | `Utils::uriFor`            |
+| `stream_for`               | `Utils::streamFor`         |
+| `parse_header`             | `Header::parse`            |
+| `normalize_header`         | `Header::normalize`        |
+| `modify_request`           | `Utils::modifyRequest`     |
+| `rewind_body`              | `Message::rewindBody`      |
+| `try_fopen`                | `Utils::tryFopen`          |
+| `copy_to_string`           | `Utils::copyToString`      |
+| `copy_to_stream`           | `Utils::copyToStream`      |
+| `hash`                     | `Utils::hash`              |
+| `readline`                 | `Utils::readLine`          |
+| `parse_request`            | `Message::parseRequest`    |
+| `parse_response`           | `Message::parseResponse`   |
+| `parse_query`              | `Query::parse`             |
+| `build_query`              | `Query::build`             |
+| `mimetype_from_filename`   | `MimeType::fromFilename`   |
+| `mimetype_from_extension`  | `MimeType::fromExtension`  |
+| `_parse_message`           | `Message::parseMessage`    |
+| `_parse_request_uri`       | `Message::parseRequestUri` |
+| `get_message_body_summary` | `Message::bodySummary`     |
+| `_caseless_remove`         | `Utils::caselessRemove`    |
 
 # Additional URI Methods
 
-Aside from the standard `Psr\Http\Message\UriInterface` implementation in form of the `GuzzleHttp\Psr7\Uri` class,
+Aside from the standard `Psr\Http\Message\UriInterface` implementation in form of the `ImpreseeGuzzleHttp\Psr7\Uri` class,
 this library also provides additional functionality when working with URIs as static methods.
 
 ## URI Types
@@ -631,40 +590,40 @@ An absolute URI has a scheme. A relative reference is used to express a URI rela
 the base URI. Relative references can be divided into several forms according to
 [RFC 3986 Section 4.2](https://tools.ietf.org/html/rfc3986#section-4.2):
 
-- network-path references, e.g. `//example.com/path`
-- absolute-path references, e.g. `/path`
-- relative-path references, e.g. `subpath`
+-   network-path references, e.g. `//example.com/path`
+-   absolute-path references, e.g. `/path`
+-   relative-path references, e.g. `subpath`
 
 The following methods can be used to identify the type of the URI.
 
-### `GuzzleHttp\Psr7\Uri::isAbsolute`
+### `ImpreseeGuzzleHttp\Psr7\Uri::isAbsolute`
 
 `public static function isAbsolute(UriInterface $uri): bool`
 
 Whether the URI is absolute, i.e. it has a scheme.
 
-### `GuzzleHttp\Psr7\Uri::isNetworkPathReference`
+### `ImpreseeGuzzleHttp\Psr7\Uri::isNetworkPathReference`
 
 `public static function isNetworkPathReference(UriInterface $uri): bool`
 
 Whether the URI is a network-path reference. A relative reference that begins with two slash characters is
 termed an network-path reference.
 
-### `GuzzleHttp\Psr7\Uri::isAbsolutePathReference`
+### `ImpreseeGuzzleHttp\Psr7\Uri::isAbsolutePathReference`
 
 `public static function isAbsolutePathReference(UriInterface $uri): bool`
 
 Whether the URI is a absolute-path reference. A relative reference that begins with a single slash character is
 termed an absolute-path reference.
 
-### `GuzzleHttp\Psr7\Uri::isRelativePathReference`
+### `ImpreseeGuzzleHttp\Psr7\Uri::isRelativePathReference`
 
 `public static function isRelativePathReference(UriInterface $uri): bool`
 
 Whether the URI is a relative-path reference. A relative reference that does not begin with a slash character is
 termed a relative-path reference.
 
-### `GuzzleHttp\Psr7\Uri::isSameDocumentReference`
+### `ImpreseeGuzzleHttp\Psr7\Uri::isSameDocumentReference`
 
 `public static function isSameDocumentReference(UriInterface $uri, UriInterface $base = null): bool`
 
@@ -676,14 +635,14 @@ fragment component, identical to the base URI. When no base URI is given, only a
 
 Additional methods to work with URI components.
 
-### `GuzzleHttp\Psr7\Uri::isDefaultPort`
+### `ImpreseeGuzzleHttp\Psr7\Uri::isDefaultPort`
 
 `public static function isDefaultPort(UriInterface $uri): bool`
 
 Whether the URI has the default port of the current scheme. `Psr\Http\Message\UriInterface::getPort` may return null
 or the standard port. This method can be used independently of the implementation.
 
-### `GuzzleHttp\Psr7\Uri::composeComponents`
+### `ImpreseeGuzzleHttp\Psr7\Uri::composeComponents`
 
 `public static function composeComponents($scheme, $authority, $path, $query, $fragment): string`
 
@@ -691,14 +650,13 @@ Composes a URI reference string from its various components according to
 [RFC 3986 Section 5.3](https://tools.ietf.org/html/rfc3986#section-5.3). Usually this method does not need to be called
 manually but instead is used indirectly via `Psr\Http\Message\UriInterface::__toString`.
 
-### `GuzzleHttp\Psr7\Uri::fromParts`
+### `ImpreseeGuzzleHttp\Psr7\Uri::fromParts`
 
 `public static function fromParts(array $parts): UriInterface`
 
 Creates a URI from a hash of [`parse_url`](https://www.php.net/manual/en/function.parse-url.php) components.
 
-
-### `GuzzleHttp\Psr7\Uri::withQueryValue`
+### `ImpreseeGuzzleHttp\Psr7\Uri::withQueryValue`
 
 `public static function withQueryValue(UriInterface $uri, $key, $value): UriInterface`
 
@@ -706,14 +664,14 @@ Creates a new URI with a specific query string value. Any existing query string 
 provided key are removed and replaced with the given key value pair. A value of null will set the query string
 key without a value, e.g. "key" instead of "key=value".
 
-### `GuzzleHttp\Psr7\Uri::withQueryValues`
+### `ImpreseeGuzzleHttp\Psr7\Uri::withQueryValues`
 
 `public static function withQueryValues(UriInterface $uri, array $keyValueArray): UriInterface`
 
 Creates a new URI with multiple query string values. It has the same behavior as `withQueryValue()` but for an
 associative array of key => value.
 
-### `GuzzleHttp\Psr7\Uri::withoutQueryValue`
+### `ImpreseeGuzzleHttp\Psr7\Uri::withoutQueryValue`
 
 `public static function withoutQueryValue(UriInterface $uri, $key): UriInterface`
 
@@ -722,9 +680,9 @@ provided key are removed.
 
 ## Cross-Origin Detection
 
-`GuzzleHttp\Psr7\UriComparator` provides methods to determine if a modified URL should be considered cross-origin.
+`ImpreseeGuzzleHttp\Psr7\UriComparator` provides methods to determine if a modified URL should be considered cross-origin.
 
-### `GuzzleHttp\Psr7\UriComparator::isCrossOrigin`
+### `ImpreseeGuzzleHttp\Psr7\UriComparator::isCrossOrigin`
 
 `public static function isCrossOrigin(UriInterface $original, UriInterface $modified): bool`
 
@@ -732,24 +690,24 @@ Determines if a modified URL should be considered cross-origin with respect to a
 
 ## Reference Resolution
 
-`GuzzleHttp\Psr7\UriResolver` provides methods to resolve a URI reference in the context of a base URI according
+`ImpreseeGuzzleHttp\Psr7\UriResolver` provides methods to resolve a URI reference in the context of a base URI according
 to [RFC 3986 Section 5](https://tools.ietf.org/html/rfc3986#section-5). This is for example also what web browsers
 do when resolving a link in a website based on the current request URI.
 
-### `GuzzleHttp\Psr7\UriResolver::resolve`
+### `ImpreseeGuzzleHttp\Psr7\UriResolver::resolve`
 
 `public static function resolve(UriInterface $base, UriInterface $rel): UriInterface`
 
 Converts the relative URI into a new URI that is resolved against the base URI.
 
-### `GuzzleHttp\Psr7\UriResolver::removeDotSegments`
+### `ImpreseeGuzzleHttp\Psr7\UriResolver::removeDotSegments`
 
 `public static function removeDotSegments(string $path): string`
 
 Removes dot segments from a path and returns the new path according to
 [RFC 3986 Section 5.2.4](https://tools.ietf.org/html/rfc3986#section-5.2.4).
 
-### `GuzzleHttp\Psr7\UriResolver::relativize`
+### `ImpreseeGuzzleHttp\Psr7\UriResolver::relativize`
 
 `public static function relativize(UriInterface $base, UriInterface $target): UriInterface`
 
@@ -772,10 +730,10 @@ echo UriResolver::relativize($base, new Uri('http://example.org/a/b/'));   // pr
 
 ## Normalization and Comparison
 
-`GuzzleHttp\Psr7\UriNormalizer` provides methods to normalize and compare URIs according to
+`ImpreseeGuzzleHttp\Psr7\UriNormalizer` provides methods to normalize and compare URIs according to
 [RFC 3986 Section 6](https://tools.ietf.org/html/rfc3986#section-6).
 
-### `GuzzleHttp\Psr7\UriNormalizer::normalize`
+### `ImpreseeGuzzleHttp\Psr7\UriNormalizer::normalize`
 
 `public static function normalize(UriInterface $uri, $flags = self::PRESERVING_NORMALIZATIONS): UriInterface`
 
@@ -783,17 +741,17 @@ Returns a normalized URI. The scheme and host component are already normalized t
 This methods adds additional normalizations that can be configured with the `$flags` parameter which is a bitmask
 of normalizations to apply. The following normalizations are available:
 
-- `UriNormalizer::PRESERVING_NORMALIZATIONS`
+-   `UriNormalizer::PRESERVING_NORMALIZATIONS`
 
     Default normalizations which only include the ones that preserve semantics.
 
-- `UriNormalizer::CAPITALIZE_PERCENT_ENCODING`
+-   `UriNormalizer::CAPITALIZE_PERCENT_ENCODING`
 
     All letters within a percent-encoding triplet (e.g., "%3A") are case-insensitive, and should be capitalized.
 
     Example: `http://example.org/a%c2%b1b` → `http://example.org/a%C2%B1b`
 
-- `UriNormalizer::DECODE_UNRESERVED_CHARACTERS`
+-   `UriNormalizer::DECODE_UNRESERVED_CHARACTERS`
 
     Decodes percent-encoded octets of unreserved characters. For consistency, percent-encoded octets in the ranges of
     ALPHA (%41–%5A and %61–%7A), DIGIT (%30–%39), hyphen (%2D), period (%2E), underscore (%5F), or tilde (%7E) should
@@ -802,13 +760,13 @@ of normalizations to apply. The following normalizations are available:
 
     Example: `http://example.org/%7Eusern%61me/` → `http://example.org/~username/`
 
-- `UriNormalizer::CONVERT_EMPTY_PATH`
+-   `UriNormalizer::CONVERT_EMPTY_PATH`
 
     Converts the empty path to "/" for http and https URIs.
 
     Example: `http://example.org` → `http://example.org/`
 
-- `UriNormalizer::REMOVE_DEFAULT_HOST`
+-   `UriNormalizer::REMOVE_DEFAULT_HOST`
 
     Removes the default host of the given URI scheme from the URI. Only the "file" scheme defines the default host
     "localhost". All of `file:/myfile`, `file:///myfile`, and `file://localhost/myfile` are equivalent according to
@@ -816,20 +774,20 @@ of normalizations to apply. The following normalizations are available:
 
     Example: `file://localhost/myfile` → `file:///myfile`
 
-- `UriNormalizer::REMOVE_DEFAULT_PORT`
+-   `UriNormalizer::REMOVE_DEFAULT_PORT`
 
     Removes the default port of the given URI scheme from the URI.
 
     Example: `http://example.org:80/` → `http://example.org/`
 
-- `UriNormalizer::REMOVE_DOT_SEGMENTS`
+-   `UriNormalizer::REMOVE_DOT_SEGMENTS`
 
     Removes unnecessary dot-segments. Dot-segments in relative-path references are not removed as it would
     change the semantics of the URI reference.
 
     Example: `http://example.org/../a/b/../c/./d.html` → `http://example.org/a/c/d.html`
 
-- `UriNormalizer::REMOVE_DUPLICATE_SLASHES`
+-   `UriNormalizer::REMOVE_DUPLICATE_SLASHES`
 
     Paths which include two or more adjacent slashes are converted to one. Webservers usually ignore duplicate slashes
     and treat those URIs equivalent. But in theory those URIs do not need to be equivalent. So this normalization
@@ -837,7 +795,7 @@ of normalizations to apply. The following normalizations are available:
 
     Example: `http://example.org//foo///bar.html` → `http://example.org/foo/bar.html`
 
-- `UriNormalizer::SORT_QUERY_PARAMETERS`
+-   `UriNormalizer::SORT_QUERY_PARAMETERS`
 
     Sort query parameters with their values in alphabetical order. However, the order of parameters in a URI may be
     significant (this is not defined by the standard). So this normalization is not safe and may change the semantics
@@ -845,7 +803,7 @@ of normalizations to apply. The following normalizations are available:
 
     Example: `?lang=en&article=fred` → `?article=fred&lang=en`
 
-### `GuzzleHttp\Psr7\UriNormalizer::isEquivalent`
+### `ImpreseeGuzzleHttp\Psr7\UriNormalizer::isEquivalent`
 
 `public static function isEquivalent(UriInterface $uri1, UriInterface $uri2, $normalizations = self::PRESERVING_NORMALIZATIONS): bool`
 
@@ -854,24 +812,20 @@ Whether two URIs can be considered equivalent. Both URIs are normalized automati
 This of course assumes they will be resolved against the same base URI. If this is not the case, determination of
 equivalence or difference of relative references does not mean anything.
 
-
 ## Version Guidance
 
 | Version | Status         | PHP Version      |
-|---------|----------------|------------------|
+| ------- | -------------- | ---------------- |
 | 1.x     | Security fixes | >=5.4,<8.1       |
 | 2.x     | Latest         | ^7.2.5 \|\| ^8.0 |
-
 
 ## Security
 
 If you discover a security vulnerability within this package, please send an email to security@tidelift.com. All security vulnerabilities will be promptly addressed. Please do not disclose security-related issues publicly until a fix has been announced. Please see [Security Policy](https://github.com/guzzle/psr7/security/policy) for more information.
 
-
 ## License
 
 Guzzle is made available under the MIT License (MIT). Please see [License File](LICENSE) for more information.
-
 
 ## For Enterprise
 

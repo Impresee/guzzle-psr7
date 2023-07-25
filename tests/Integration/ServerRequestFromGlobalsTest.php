@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace GuzzleHttp\Tests\Psr7\Integration;
+namespace ImpreseeGuzzleHttp\Tests\Psr7\Integration;
 
 use PHPUnit\Framework\TestCase;
 

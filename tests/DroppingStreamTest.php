@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace GuzzleHttp\Tests\Psr7;
+namespace ImpreseeGuzzleHttp\Tests\Psr7;
 
-use GuzzleHttp\Psr7\BufferStream;
-use GuzzleHttp\Psr7\DroppingStream;
+use ImpreseeGuzzleHttp\Psr7\BufferStream;
+use ImpreseeGuzzleHttp\Psr7\DroppingStream;
 use PHPUnit\Framework\TestCase;
 
 class DroppingStreamTest extends TestCase

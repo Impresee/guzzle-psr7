@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace GuzzleHttp\Psr7;
+namespace ImpreseeGuzzleHttp\Psr7;
 
-use GuzzleHttp\Psr7\Exception\MalformedUriException;
+use ImpreseeGuzzleHttp\Psr7\Exception\MalformedUriException;
 use Psr\Http\Message\UriInterface;
 
 /**

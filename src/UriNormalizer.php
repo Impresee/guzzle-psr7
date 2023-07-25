@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace GuzzleHttp\Psr7;
+namespace ImpreseeGuzzleHttp\Psr7;
 
 use Psr\Http\Message\UriInterface;
 
@@ -58,7 +58,7 @@ final class UriNormalizer
      * All of `file:/myfile`, `file:///myfile`, and `file://localhost/myfile`
      * are equivalent according to RFC 3986. The first format is not accepted
      * by PHPs stream functions and thus already normalized implicitly to the
-     * second format in the Uri class. See `GuzzleHttp\Psr7\Uri::composeComponents`.
+     * second format in the Uri class. See `ImpreseeGuzzleHttp\Psr7\Uri::composeComponents`.
      *
      * Example: file://localhost/myfile → file:///myfile
      */

@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace GuzzleHttp\Tests\Psr7;
+namespace ImpreseeGuzzleHttp\Tests\Psr7;
 
-use GuzzleHttp\Psr7;
-use GuzzleHttp\Psr7\FnStream;
+use ImpreseeGuzzleHttp\Psr7;
+use ImpreseeGuzzleHttp\Psr7\FnStream;
 use PHPUnit\Framework\TestCase;
 
 /**
- * @covers GuzzleHttp\Psr7\FnStream
+ * @covers ImpreseeGuzzleHttp\Psr7\FnStream
  */
 class FnStreamTest extends TestCase
 {
@@ -121,6 +121,6 @@ class FnStreamTest extends TestCase
 
         self::assertCount(1, $errors);
         self::assertSame(E_USER_ERROR, $errors[0]['number']);
-        self::assertStringStartsWith('GuzzleHttp\Psr7\FnStream::__toString exception:', $errors[0]['message']);
+        self::assertStringStartsWith('ImpreseeGuzzleHttp\Psr7\FnStream::__toString exception:', $errors[0]['message']);
     }
 }

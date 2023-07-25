@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace GuzzleHttp\Tests\Psr7;
+namespace ImpreseeGuzzleHttp\Tests\Psr7;
 
-use GuzzleHttp\Psr7\FnStream;
-use GuzzleHttp\Psr7\Stream;
-use GuzzleHttp\Psr7\StreamWrapper;
+use ImpreseeGuzzleHttp\Psr7\FnStream;
+use ImpreseeGuzzleHttp\Psr7\Stream;
+use ImpreseeGuzzleHttp\Psr7\StreamWrapper;
 use PHPUnit\Framework\TestCase;
 
 /**
- * @covers GuzzleHttp\Psr7\Stream
+ * @covers ImpreseeGuzzleHttp\Psr7\Stream
  */
 class StreamTest extends TestCase
 {
@@ -225,7 +225,7 @@ class StreamTest extends TestCase
             restore_error_handler();
 
             self::assertCount(1, $errors);
-            self::assertStringStartsWith('GuzzleHttp\Psr7\Stream::__toString exception', $errors[0]['message']);
+            self::assertStringStartsWith('ImpreseeGuzzleHttp\Psr7\Stream::__toString exception', $errors[0]['message']);
             self::assertSame(E_USER_ERROR, $errors[0]['number']);
         }
     }
@@ -437,9 +437,9 @@ class StreamTest extends TestCase
     }
 }
 
-namespace GuzzleHttp\Psr7;
+namespace ImpreseeGuzzleHttp\Psr7;
 
-use GuzzleHttp\Tests\Psr7\StreamTest;
+use ImpreseeGuzzleHttp\Tests\Psr7\StreamTest;
 
 function fread($handle, $length)
 {

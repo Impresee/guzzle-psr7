@@ -2,15 +2,15 @@
 
 declare(strict_types=1);
 
-namespace GuzzleHttp\Tests\Psr7;
+namespace ImpreseeGuzzleHttp\Tests\Psr7;
 
-use GuzzleHttp\Psr7\Uri;
-use GuzzleHttp\Psr7\UriNormalizer;
+use ImpreseeGuzzleHttp\Psr7\Uri;
+use ImpreseeGuzzleHttp\Psr7\UriNormalizer;
 use PHPUnit\Framework\TestCase;
 use Psr\Http\Message\UriInterface;
 
 /**
- * @covers GuzzleHttp\Psr7\UriNormalizer
+ * @covers ImpreseeGuzzleHttp\Psr7\UriNormalizer
  */
 class UriNormalizerTest extends TestCase
 {

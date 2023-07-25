@@ -1,9 +1,9 @@
 <?php declare(strict_types=1);
 
-namespace GuzzleHttp\Tests\Psr7;
+namespace ImpreseeGuzzleHttp\Tests\Psr7;
 
-use GuzzleHttp\Psr7\Stream;
-use GuzzleHttp\Psr7\Utils;
+use ImpreseeGuzzleHttp\Psr7\Stream;
+use ImpreseeGuzzleHttp\Psr7\Utils;
 
 final class ReadSeekOnlyStream extends Stream
 {

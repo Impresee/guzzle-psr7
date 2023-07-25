@@ -16,132 +16,132 @@ parameters:
 			path: src/DroppingStream.php
 
 		-
-			message: "#^Access to an undefined property GuzzleHttp\\\\Psr7\\\\FnStream\\:\\:\\$_fn___toString\\.$#"
+			message: "#^Access to an undefined property ImpreseeGuzzleHttp\\\\Psr7\\\\FnStream\\:\\:\\$_fn___toString\\.$#"
 			count: 1
 			path: src/FnStream.php
 
 		-
-			message: "#^Access to an undefined property GuzzleHttp\\\\Psr7\\\\FnStream\\:\\:\\$_fn_close\\.$#"
+			message: "#^Access to an undefined property ImpreseeGuzzleHttp\\\\Psr7\\\\FnStream\\:\\:\\$_fn_close\\.$#"
 			count: 1
 			path: src/FnStream.php
 
 		-
-			message: "#^Access to an undefined property GuzzleHttp\\\\Psr7\\\\FnStream\\:\\:\\$_fn_detach\\.$#"
+			message: "#^Access to an undefined property ImpreseeGuzzleHttp\\\\Psr7\\\\FnStream\\:\\:\\$_fn_detach\\.$#"
 			count: 1
 			path: src/FnStream.php
 
 		-
-			message: "#^Access to an undefined property GuzzleHttp\\\\Psr7\\\\FnStream\\:\\:\\$_fn_eof\\.$#"
+			message: "#^Access to an undefined property ImpreseeGuzzleHttp\\\\Psr7\\\\FnStream\\:\\:\\$_fn_eof\\.$#"
 			count: 1
 			path: src/FnStream.php
 
 		-
-			message: "#^Access to an undefined property GuzzleHttp\\\\Psr7\\\\FnStream\\:\\:\\$_fn_getContents\\.$#"
+			message: "#^Access to an undefined property ImpreseeGuzzleHttp\\\\Psr7\\\\FnStream\\:\\:\\$_fn_getContents\\.$#"
 			count: 1
 			path: src/FnStream.php
 
 		-
-			message: "#^Access to an undefined property GuzzleHttp\\\\Psr7\\\\FnStream\\:\\:\\$_fn_getMetadata\\.$#"
+			message: "#^Access to an undefined property ImpreseeGuzzleHttp\\\\Psr7\\\\FnStream\\:\\:\\$_fn_getMetadata\\.$#"
 			count: 1
 			path: src/FnStream.php
 
 		-
-			message: "#^Access to an undefined property GuzzleHttp\\\\Psr7\\\\FnStream\\:\\:\\$_fn_getSize\\.$#"
+			message: "#^Access to an undefined property ImpreseeGuzzleHttp\\\\Psr7\\\\FnStream\\:\\:\\$_fn_getSize\\.$#"
 			count: 1
 			path: src/FnStream.php
 
 		-
-			message: "#^Access to an undefined property GuzzleHttp\\\\Psr7\\\\FnStream\\:\\:\\$_fn_isReadable\\.$#"
+			message: "#^Access to an undefined property ImpreseeGuzzleHttp\\\\Psr7\\\\FnStream\\:\\:\\$_fn_isReadable\\.$#"
 			count: 1
 			path: src/FnStream.php
 
 		-
-			message: "#^Access to an undefined property GuzzleHttp\\\\Psr7\\\\FnStream\\:\\:\\$_fn_isSeekable\\.$#"
+			message: "#^Access to an undefined property ImpreseeGuzzleHttp\\\\Psr7\\\\FnStream\\:\\:\\$_fn_isSeekable\\.$#"
 			count: 1
 			path: src/FnStream.php
 
 		-
-			message: "#^Access to an undefined property GuzzleHttp\\\\Psr7\\\\FnStream\\:\\:\\$_fn_isWritable\\.$#"
+			message: "#^Access to an undefined property ImpreseeGuzzleHttp\\\\Psr7\\\\FnStream\\:\\:\\$_fn_isWritable\\.$#"
 			count: 1
 			path: src/FnStream.php
 
 		-
-			message: "#^Access to an undefined property GuzzleHttp\\\\Psr7\\\\FnStream\\:\\:\\$_fn_read\\.$#"
+			message: "#^Access to an undefined property ImpreseeGuzzleHttp\\\\Psr7\\\\FnStream\\:\\:\\$_fn_read\\.$#"
 			count: 1
 			path: src/FnStream.php
 
 		-
-			message: "#^Access to an undefined property GuzzleHttp\\\\Psr7\\\\FnStream\\:\\:\\$_fn_rewind\\.$#"
+			message: "#^Access to an undefined property ImpreseeGuzzleHttp\\\\Psr7\\\\FnStream\\:\\:\\$_fn_rewind\\.$#"
 			count: 1
 			path: src/FnStream.php
 
 		-
-			message: "#^Access to an undefined property GuzzleHttp\\\\Psr7\\\\FnStream\\:\\:\\$_fn_seek\\.$#"
+			message: "#^Access to an undefined property ImpreseeGuzzleHttp\\\\Psr7\\\\FnStream\\:\\:\\$_fn_seek\\.$#"
 			count: 1
 			path: src/FnStream.php
 
 		-
-			message: "#^Access to an undefined property GuzzleHttp\\\\Psr7\\\\FnStream\\:\\:\\$_fn_tell\\.$#"
+			message: "#^Access to an undefined property ImpreseeGuzzleHttp\\\\Psr7\\\\FnStream\\:\\:\\$_fn_tell\\.$#"
 			count: 1
 			path: src/FnStream.php
 
 		-
-			message: "#^Access to an undefined property GuzzleHttp\\\\Psr7\\\\FnStream\\:\\:\\$_fn_write\\.$#"
+			message: "#^Access to an undefined property ImpreseeGuzzleHttp\\\\Psr7\\\\FnStream\\:\\:\\$_fn_write\\.$#"
 			count: 1
 			path: src/FnStream.php
 
 		-
-			message: "#^Method GuzzleHttp\\\\Psr7\\\\FnStream\\:\\:__toString\\(\\) should return string but returns mixed\\.$#"
+			message: "#^Method ImpreseeGuzzleHttp\\\\Psr7\\\\FnStream\\:\\:__toString\\(\\) should return string but returns mixed\\.$#"
 			count: 1
 			path: src/FnStream.php
 
 		-
-			message: "#^Method GuzzleHttp\\\\Psr7\\\\FnStream\\:\\:detach\\(\\) should return resource\\|null but returns mixed\\.$#"
+			message: "#^Method ImpreseeGuzzleHttp\\\\Psr7\\\\FnStream\\:\\:detach\\(\\) should return resource\\|null but returns mixed\\.$#"
 			count: 1
 			path: src/FnStream.php
 
 		-
-			message: "#^Method GuzzleHttp\\\\Psr7\\\\FnStream\\:\\:eof\\(\\) should return bool but returns mixed\\.$#"
+			message: "#^Method ImpreseeGuzzleHttp\\\\Psr7\\\\FnStream\\:\\:eof\\(\\) should return bool but returns mixed\\.$#"
 			count: 1
 			path: src/FnStream.php
 
 		-
-			message: "#^Method GuzzleHttp\\\\Psr7\\\\FnStream\\:\\:getContents\\(\\) should return string but returns mixed\\.$#"
+			message: "#^Method ImpreseeGuzzleHttp\\\\Psr7\\\\FnStream\\:\\:getContents\\(\\) should return string but returns mixed\\.$#"
 			count: 1
 			path: src/FnStream.php
 
 		-
-			message: "#^Method GuzzleHttp\\\\Psr7\\\\FnStream\\:\\:getSize\\(\\) should return int\\|null but returns mixed\\.$#"
+			message: "#^Method ImpreseeGuzzleHttp\\\\Psr7\\\\FnStream\\:\\:getSize\\(\\) should return int\\|null but returns mixed\\.$#"
 			count: 1
 			path: src/FnStream.php
 
 		-
-			message: "#^Method GuzzleHttp\\\\Psr7\\\\FnStream\\:\\:isReadable\\(\\) should return bool but returns mixed\\.$#"
+			message: "#^Method ImpreseeGuzzleHttp\\\\Psr7\\\\FnStream\\:\\:isReadable\\(\\) should return bool but returns mixed\\.$#"
 			count: 1
 			path: src/FnStream.php
 
 		-
-			message: "#^Method GuzzleHttp\\\\Psr7\\\\FnStream\\:\\:isSeekable\\(\\) should return bool but returns mixed\\.$#"
+			message: "#^Method ImpreseeGuzzleHttp\\\\Psr7\\\\FnStream\\:\\:isSeekable\\(\\) should return bool but returns mixed\\.$#"
 			count: 1
 			path: src/FnStream.php
 
 		-
-			message: "#^Method GuzzleHttp\\\\Psr7\\\\FnStream\\:\\:isWritable\\(\\) should return bool but returns mixed\\.$#"
+			message: "#^Method ImpreseeGuzzleHttp\\\\Psr7\\\\FnStream\\:\\:isWritable\\(\\) should return bool but returns mixed\\.$#"
 			count: 1
 			path: src/FnStream.php
 
 		-
-			message: "#^Method GuzzleHttp\\\\Psr7\\\\FnStream\\:\\:read\\(\\) should return string but returns mixed\\.$#"
+			message: "#^Method ImpreseeGuzzleHttp\\\\Psr7\\\\FnStream\\:\\:read\\(\\) should return string but returns mixed\\.$#"
 			count: 1
 			path: src/FnStream.php
 
 		-
-			message: "#^Method GuzzleHttp\\\\Psr7\\\\FnStream\\:\\:tell\\(\\) should return int but returns mixed\\.$#"
+			message: "#^Method ImpreseeGuzzleHttp\\\\Psr7\\\\FnStream\\:\\:tell\\(\\) should return int but returns mixed\\.$#"
 			count: 1
 			path: src/FnStream.php
 
 		-
-			message: "#^Method GuzzleHttp\\\\Psr7\\\\FnStream\\:\\:write\\(\\) should return int but returns mixed\\.$#"
+			message: "#^Method ImpreseeGuzzleHttp\\\\Psr7\\\\FnStream\\:\\:write\\(\\) should return int but returns mixed\\.$#"
 			count: 1
 			path: src/FnStream.php
 
@@ -191,7 +191,7 @@ parameters:
 			path: src/Message.php
 
 		-
-			message: "#^Method GuzzleHttp\\\\Psr7\\\\MultipartStream\\:\\:getHeader\\(\\) has no return type specified\\.$#"
+			message: "#^Method ImpreseeGuzzleHttp\\\\Psr7\\\\MultipartStream\\:\\:getHeader\\(\\) has no return type specified\\.$#"
 			count: 1
 			path: src/MultipartStream.php
 
@@ -211,7 +211,7 @@ parameters:
 			path: src/PumpStream.php
 
 		-
-			message: "#^Parameter \\#1 \\$string of method GuzzleHttp\\\\Psr7\\\\BufferStream\\:\\:write\\(\\) expects string, mixed given\\.$#"
+			message: "#^Parameter \\#1 \\$string of method ImpreseeGuzzleHttp\\\\Psr7\\\\BufferStream\\:\\:write\\(\\) expects string, mixed given\\.$#"
 			count: 1
 			path: src/PumpStream.php
 
@@ -221,7 +221,7 @@ parameters:
 			path: src/PumpStream.php
 
 		-
-			message: "#^Method GuzzleHttp\\\\Psr7\\\\ServerRequest\\:\\:normalizeNestedFileSpec\\(\\) should return array\\<Psr\\\\Http\\\\Message\\\\UploadedFileInterface\\> but returns array\\<int\\|string, array\\<Psr\\\\Http\\\\Message\\\\UploadedFileInterface\\>\\|Psr\\\\Http\\\\Message\\\\UploadedFileInterface\\>\\.$#"
+			message: "#^Method ImpreseeGuzzleHttp\\\\Psr7\\\\ServerRequest\\:\\:normalizeNestedFileSpec\\(\\) should return array\\<Psr\\\\Http\\\\Message\\\\UploadedFileInterface\\> but returns array\\<int\\|string, array\\<Psr\\\\Http\\\\Message\\\\UploadedFileInterface\\>\\|Psr\\\\Http\\\\Message\\\\UploadedFileInterface\\>\\.$#"
 			count: 1
 			path: src/ServerRequest.php
 
@@ -231,12 +231,12 @@ parameters:
 			path: src/Stream.php
 
 		-
-			message: "#^Property GuzzleHttp\\\\Psr7\\\\Stream\\:\\:\\$stream \\(resource\\) in isset\\(\\) is not nullable\\.$#"
+			message: "#^Property ImpreseeGuzzleHttp\\\\Psr7\\\\Stream\\:\\:\\$stream \\(resource\\) in isset\\(\\) is not nullable\\.$#"
 			count: 10
 			path: src/Stream.php
 
 		-
-			message: "#^Property GuzzleHttp\\\\Psr7\\\\Stream\\:\\:\\$uri \\(string\\|null\\) does not accept mixed\\.$#"
+			message: "#^Property ImpreseeGuzzleHttp\\\\Psr7\\\\Stream\\:\\:\\$uri \\(string\\|null\\) does not accept mixed\\.$#"
 			count: 1
 			path: src/Stream.php
 
@@ -246,12 +246,12 @@ parameters:
 			path: src/Stream.php
 
 		-
-			message: "#^Method GuzzleHttp\\\\Psr7\\\\StreamWrapper\\:\\:getResource\\(\\) should return resource but returns resource\\|false\\.$#"
+			message: "#^Method ImpreseeGuzzleHttp\\\\Psr7\\\\StreamWrapper\\:\\:getResource\\(\\) should return resource but returns resource\\|false\\.$#"
 			count: 1
 			path: src/StreamWrapper.php
 
 		-
-			message: "#^Method GuzzleHttp\\\\Psr7\\\\UploadedFile\\:\\:isStringNotEmpty\\(\\) has parameter \\$param with no type specified\\.$#"
+			message: "#^Method ImpreseeGuzzleHttp\\\\Psr7\\\\UploadedFile\\:\\:isStringNotEmpty\\(\\) has parameter \\$param with no type specified\\.$#"
 			count: 1
 			path: src/UploadedFile.php
 
@@ -261,17 +261,17 @@ parameters:
 			path: src/Uri.php
 
 		-
-			message: "#^Method GuzzleHttp\\\\Psr7\\\\Uri\\:\\:filterPath\\(\\) should return string but returns string\\|null\\.$#"
+			message: "#^Method ImpreseeGuzzleHttp\\\\Psr7\\\\Uri\\:\\:filterPath\\(\\) should return string but returns string\\|null\\.$#"
 			count: 1
 			path: src/Uri.php
 
 		-
-			message: "#^Method GuzzleHttp\\\\Psr7\\\\Uri\\:\\:filterQueryAndFragment\\(\\) should return string but returns string\\|null\\.$#"
+			message: "#^Method ImpreseeGuzzleHttp\\\\Psr7\\\\Uri\\:\\:filterQueryAndFragment\\(\\) should return string but returns string\\|null\\.$#"
 			count: 1
 			path: src/Uri.php
 
 		-
-			message: "#^Method GuzzleHttp\\\\Psr7\\\\Uri\\:\\:filterUserInfoComponent\\(\\) should return string but returns string\\|null\\.$#"
+			message: "#^Method ImpreseeGuzzleHttp\\\\Psr7\\\\Uri\\:\\:filterUserInfoComponent\\(\\) should return string but returns string\\|null\\.$#"
 			count: 1
 			path: src/Uri.php
 
@@ -296,7 +296,7 @@ parameters:
 			path: src/UriResolver.php
 
 		-
-			message: "#^Method GuzzleHttp\\\\Psr7\\\\Utils\\:\\:tryGetContents\\(\\) should return string but returns string\\|false\\.$#"
+			message: "#^Method ImpreseeGuzzleHttp\\\\Psr7\\\\Utils\\:\\:tryGetContents\\(\\) should return string but returns string\\|false\\.$#"
 			count: 1
 			path: src/Utils.php
 
@@ -306,12 +306,12 @@ parameters:
 			path: src/Utils.php
 
 		-
-			message: "#^Parameter \\#1 \\$keys of static method GuzzleHttp\\\\Psr7\\\\Utils\\:\\:caselessRemove\\(\\) expects array\\<string\\>, array\\<int, int\\|string\\> given\\.$#"
+			message: "#^Parameter \\#1 \\$keys of static method ImpreseeGuzzleHttp\\\\Psr7\\\\Utils\\:\\:caselessRemove\\(\\) expects array\\<string\\>, array\\<int, int\\|string\\> given\\.$#"
 			count: 1
 			path: src/Utils.php
 
 		-
-			message: "#^Parameter \\#1 \\$source of class GuzzleHttp\\\\Psr7\\\\PumpStream constructor expects callable\\(int\\)\\: string\\|false\\|null, Closure\\(\\)\\: mixed given\\.$#"
+			message: "#^Parameter \\#1 \\$source of class ImpreseeGuzzleHttp\\\\Psr7\\\\PumpStream constructor expects callable\\(int\\)\\: string\\|false\\|null, Closure\\(\\)\\: mixed given\\.$#"
 			count: 1
 			path: src/Utils.php
 

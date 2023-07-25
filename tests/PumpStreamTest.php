@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace GuzzleHttp\Tests\Psr7;
+namespace ImpreseeGuzzleHttp\Tests\Psr7;
 
-use GuzzleHttp\Psr7;
-use GuzzleHttp\Psr7\LimitStream;
-use GuzzleHttp\Psr7\PumpStream;
+use ImpreseeGuzzleHttp\Psr7;
+use ImpreseeGuzzleHttp\Psr7\LimitStream;
+use ImpreseeGuzzleHttp\Psr7\PumpStream;
 use PHPUnit\Framework\TestCase;
 
 class PumpStreamTest extends TestCase
@@ -99,6 +99,6 @@ class PumpStreamTest extends TestCase
 
         self::assertCount(1, $errors);
         self::assertSame(E_USER_ERROR, $errors[0]['number']);
-        self::assertStringStartsWith('GuzzleHttp\Psr7\PumpStream::__toString exception:', $errors[0]['message']);
+        self::assertStringStartsWith('ImpreseeGuzzleHttp\Psr7\PumpStream::__toString exception:', $errors[0]['message']);
     }
 }
