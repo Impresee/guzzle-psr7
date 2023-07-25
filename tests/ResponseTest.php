@@ -7,7 +7,7 @@ namespace ImpreseeGuzzleHttp\Tests\Psr7;
 use ImpreseeGuzzleHttp\Psr7;
 use ImpreseeGuzzleHttp\Psr7\Response;
 use PHPUnit\Framework\TestCase;
-use Psr\Http\Message\StreamInterface;
+use Impresee\Psr\Http\Message\StreamInterface;
 
 /**
  * @covers ImpreseeGuzzleHttp\Psr7\MessageTrait

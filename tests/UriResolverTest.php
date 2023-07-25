@@ -7,7 +7,7 @@ namespace ImpreseeGuzzleHttp\Tests\Psr7;
 use ImpreseeGuzzleHttp\Psr7\Uri;
 use ImpreseeGuzzleHttp\Psr7\UriResolver;
 use PHPUnit\Framework\TestCase;
-use Psr\Http\Message\UriInterface;
+use Impresee\Psr\Http\Message\UriInterface;
 
 /**
  * @covers ImpreseeGuzzleHttp\Psr7\UriResolver

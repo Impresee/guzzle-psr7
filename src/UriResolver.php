@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace ImpreseeGuzzleHttp\Psr7;
 
-use Psr\Http\Message\UriInterface;
+use Impresee\Psr\Http\Message\UriInterface;
 
 /**
  * Resolves a URI reference in the context of a base URI and the opposite way.

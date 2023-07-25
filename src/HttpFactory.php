@@ -4,18 +4,18 @@ declare(strict_types=1);
 
 namespace ImpreseeGuzzleHttp\Psr7;
 
-use Psr\Http\Message\RequestFactoryInterface;
-use Psr\Http\Message\RequestInterface;
-use Psr\Http\Message\ResponseFactoryInterface;
-use Psr\Http\Message\ResponseInterface;
-use Psr\Http\Message\ServerRequestFactoryInterface;
-use Psr\Http\Message\ServerRequestInterface;
-use Psr\Http\Message\StreamFactoryInterface;
-use Psr\Http\Message\StreamInterface;
-use Psr\Http\Message\UploadedFileFactoryInterface;
-use Psr\Http\Message\UploadedFileInterface;
-use Psr\Http\Message\UriFactoryInterface;
-use Psr\Http\Message\UriInterface;
+use Impresee\Psr\Http\Message\RequestFactoryInterface;
+use Impresee\Psr\Http\Message\RequestInterface;
+use Impresee\Psr\Http\Message\ResponseFactoryInterface;
+use Impresee\Psr\Http\Message\ResponseInterface;
+use Impresee\Psr\Http\Message\ServerRequestFactoryInterface;
+use Impresee\Psr\Http\Message\ServerRequestInterface;
+use Impresee\Psr\Http\Message\StreamFactoryInterface;
+use Impresee\Psr\Http\Message\StreamInterface;
+use Impresee\Psr\Http\Message\UploadedFileFactoryInterface;
+use Impresee\Psr\Http\Message\UploadedFileInterface;
+use Impresee\Psr\Http\Message\UriFactoryInterface;
+use Impresee\Psr\Http\Message\UriInterface;
 
 /**
  * Implements all of the PSR-17 interfaces.

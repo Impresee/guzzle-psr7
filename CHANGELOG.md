@@ -373,8 +373,8 @@ Initial release.
 
 Currently unsupported:
 
--   `Psr\Http\Message\ServerRequestInterface`
--   `Psr\Http\Message\UploadedFileInterface`
+-   `Impresee\Psr\Http\Message\ServerRequestInterface`
+-   `Impresee\Psr\Http\Message\UploadedFileInterface`
 
 [1.6.0]: https://github.com/guzzle/psr7/compare/1.5.2...1.6.0
 [1.5.2]: https://github.com/guzzle/psr7/compare/1.5.1...1.5.2

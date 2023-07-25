@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace ImpreseeGuzzleHttp\Psr7;
 
-use Psr\Http\Message\StreamInterface;
+use Impresee\Psr\Http\Message\StreamInterface;
 
 /**
  * Stream decorator that begins dropping data once the size of the underlying

@@ -8,7 +8,7 @@ use ImpreseeGuzzleHttp\Psr7;
 use ImpreseeGuzzleHttp\Psr7\FnStream;
 use ImpreseeGuzzleHttp\Psr7\NoSeekStream;
 use PHPUnit\Framework\TestCase;
-use Psr\Http\Message\StreamInterface;
+use Impresee\Psr\Http\Message\StreamInterface;
 
 class UtilsTest extends TestCase
 {
@@ -403,7 +403,7 @@ class UtilsTest extends TestCase
 
         $r1 = new Psr7\ServerRequest('GET', 'http://foo.com');
         $r2 = Psr7\Utils::modifyRequest($r1, []);
-        self::assertInstanceOf('Psr\Http\Message\ServerRequestInterface', $r2);
+        self::assertInstanceOf('Impresee\Psr\Http\Message\ServerRequestInterface', $r2);
     }
 
     public function testReturnsUriAsIsWhenNoChanges(): void
@@ -438,7 +438,7 @@ class UtilsTest extends TestCase
 
         $r1 = new Psr7\ServerRequest('GET', 'http://foo.com');
         $r2 = Psr7\Utils::modifyRequest($r1, ['remove_headers' => ['non-existent']]);
-        self::assertInstanceOf('Psr\Http\Message\ServerRequestInterface', $r2);
+        self::assertInstanceOf('Impresee\Psr\Http\Message\ServerRequestInterface', $r2);
     }
 
     public function testModifyServerRequestWithUploadedFiles(): void

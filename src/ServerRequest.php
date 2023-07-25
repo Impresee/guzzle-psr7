@@ -5,10 +5,10 @@ declare(strict_types=1);
 namespace ImpreseeGuzzleHttp\Psr7;
 
 use InvalidArgumentException;
-use Psr\Http\Message\ServerRequestInterface;
-use Psr\Http\Message\StreamInterface;
-use Psr\Http\Message\UploadedFileInterface;
-use Psr\Http\Message\UriInterface;
+use Impresee\Psr\Http\Message\ServerRequestInterface;
+use Impresee\Psr\Http\Message\StreamInterface;
+use Impresee\Psr\Http\Message\UploadedFileInterface;
+use Impresee\Psr\Http\Message\UriInterface;
 
 /**
  * Server-side HTTP request
