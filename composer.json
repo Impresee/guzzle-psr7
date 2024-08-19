@@ -60,7 +60,7 @@
         "psr-4": {
             "ImpreseeGuzzleHttp\\Psr7\\": "src/"
         },
-        "files": ["src/functions_include.php"]
+        "files": ["src/impresee_functions_include.php"]
     },
     "autoload-dev": {
         "psr-4": {
